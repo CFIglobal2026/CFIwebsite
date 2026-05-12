@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CFI Global Pvt. Ltd. — Client First. Innovate Always.</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <style>
+    
+    <!-- LEFT SIDE -->
+<div class="fade">
+
+<img src="https://github.com/CFIglobal2026/CFIGlobal/blob/main/1.jpeg?raw=true" class="index-img">
+
+<div class="glass-card">
+</div>
+    
+    /* ─── RESET & VARIABLES ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue-50:  #e8f3ff;
+      --blue-100: #cce4ff;
+      --blue-300: #66b2ff;
+      --blue-500: #1a7fe8;
+      --blue-600: #0a66c2;
+      --blue-700: #0850a0;
+      --blue-900: #062d5f;
+      --white:    #ffffff;
+      --gray-50:  #f8fafd;
+      --gray-100: #f0f4f9;
+      --gray-300: #c8d5e8;
+      --gray-500: #6b7fa0;
+      --gray-700: #3a4a6b;
+      --text:     #1a2540;
+      --shadow-sm: 0 2px 12px rgba(10,102,194,.07);
+      --shadow-md: 0 8px 32px rgba(10,102,194,.12);
+      --shadow-lg: 0 20px 60px rgba(10,102,194,.16);
+      --radius:   16px;
+      --radius-sm:10px;
+      --transition: all .28s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── UTILITIES ─── */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 96px 0; }
+    .section-tag {
+      display: inline-block;
+      background: var(--blue-50);
+      color: var(--blue-600);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--blue-900);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: var(--blue-600);
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(10,102,194,.3);
+    }
+    .btn-primary:hover {
+      background: var(--blue-700);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(10,102,194,.4);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--blue-600);
+      border: 2px solid var(--blue-300);
+    }
+    .btn-outline:hover {
+      background: var(--blue-50);
+      border-color: var(--blue-600);
+      transform: translateY(-2px);
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gray-100);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--blue-600);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -.02em;
+    }
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue-900);
+      line-height: 1.1;
+    }
+    .logo-sub {
+      font-size: .65rem;
+      font-weight: 400;
+      color: var(--gray-500);
+      letter-spacing: .04em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-size: .9rem;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+    .nav-links a:hover { background: var(--blue-50); color: var(--blue-600); }
+
+    /* Login dropdown */
+    .login-wrapper { position: relative; }
+    .login-btn {
+      background: var(--blue-600);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 6px;
+      transition: var(--transition);
+    }
+    .login-btn:hover { background: var(--blue-700); }
+    .login-btn svg { transition: var(--transition); }
+    .login-wrapper:hover .login-btn svg { transform: rotate(180deg); }
+    .login-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--gray-100);
+      overflow: hidden;
+      min-width: 170px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: var(--transition);
+    }
+    .login-wrapper:hover .login-dropdown {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    .login-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 18px;
+      text-decoration: none;
+      color: var(--gray-700);
+      font-size: .88rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .login-dropdown a:hover { background: var(--blue-50); color: var(--blue-600); }
+    .login-dropdown a + a { border-top: 1px solid var(--gray-100); }
+
+    /* Hamburger */
+    .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--blue-900);
+      margin: 5px 0;
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 150px 0 80px;
+      background: linear-gradient(150deg, var(--blue-50) 0%, white 55%, var(--blue-50) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(10,102,194,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(10,102,194,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid var(--blue-100);
+      border-radius: 50px;
+      padding: 7px 16px;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--blue-600);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .7; transform: scale(1.3); }
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--blue-900);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue-600);
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card-main {
+      background: white;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--gray-100);
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-card-main h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--blue-900);
+      margin-bottom: 20px;
+    }
+    .stat-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-pill {
+      flex: 1;
+      background: var(--blue-50);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .stat-pill strong {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-pill span { font-size: .72rem; color: var(--gray-500); font-weight: 500; }
+    .progress-item { margin-bottom: 14px; }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      margin-bottom: 6px;
+    }
+    .progress-bar {
+      height: 6px;
+      background: var(--gray-100);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue-500), var(--blue-300));
+      border-radius: 50px;
+      animation: fillBar 1.8s ease forwards;
+    }
+    @keyframes fillBar { from { width: 0; } }
+    .hero-float {
+      position: absolute;
+      background: white;
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--blue-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--gray-100);
+    }
+    .hero-float-1 { top: -18px; right: -24px; animation: floatA 4s ease-in-out infinite; }
+    .hero-float-2 { bottom: 20px; left: -28px; animation: floatB 4.5s ease-in-out infinite; }
+    @keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes floatB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+    .float-icon {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+
+    /* ─── SERVICES ─── */
+    .services { background: var(--gray-50); }
+    .services-header { text-align: center; margin-bottom: 56px; }
+    .services-header .section-subtitle { margin: 0 auto; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+      transition: var(--transition);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--blue-50), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--blue-50);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon { background: var(--blue-600); transform: scale(1.08); }
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-900);
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .service-card p {
+      font-size: .875rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+      position: relative;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 72px;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-bg-card {
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
+      border-radius: 24px;
+      padding: 48px 36px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-bg-card::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,.06);
+      border-radius: 50%;
+    }
+    .about-bg-card::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -40px;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,.04);
+      border-radius: 50%;
+    }
+    .about-bg-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .about-bg-card p { font-size: .9rem; opacity: .85; line-height: 1.7; margin-bottom: 28px; }
+    .about-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .about-chip {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .about-float-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: white;
+      border-radius: 14px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      border: 1px solid var(--gray-100);
+    }
+    .about-float-badge strong {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--blue-600);
+    }
+    .about-float-badge span { font-size: .75rem; color: var(--gray-500); font-weight: 500; }
+    .about-content .section-subtitle { margin-bottom: 28px; }
+    .about-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .9rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    .about-list li::before {
+      content: '';
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+      background: var(--blue-50);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%230a66c2'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: 12px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 2px;
+    }
+
+    /* ─── STATS ─── */
+    .stats {
+      background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 100%);
+      padding: 72px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+    }
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 25%; bottom: 25%;
+      width: 1px;
+      background: rgba(255,255,255,.1);
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: .875rem;
+      color: rgba(255,255,255,.65);
+      font-weight: 500;
+    }
+
+    /* ─── BLOG ─── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .blog-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+      transition: var(--transition);
+    }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .blog-thumb {
+      height: 180px;
+      background: linear-gradient(135deg, var(--blue-50), var(--blue-100));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(10,102,194,.08));
+    }
+    .blog-body { padding: 24px; }
+    .blog-tag {
+      display: inline-block;
+      background: var(--blue-50);
+      color: var(--blue-600);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    .blog-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-900);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    .blog-card p {
+      font-size: .85rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .blog-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--blue-600);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .blog-read:hover { gap: 10px; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials { background: var(--gray-50); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .testi-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+      transition: var(--transition);
+      position: relative;
+    }
+    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .quote-icon {
+      font-size: 2.5rem;
+      color: var(--blue-100);
+      line-height: 1;
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+    }
+    .testi-card blockquote {
+      font-size: .92rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-500), var(--blue-300));
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .testi-meta strong {
+      display: block;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--blue-900);
+    }
+    .testi-meta span { font-size: .78rem; color: var(--gray-500); }
+    .stars { color: #fbbf24; font-size: .85rem; letter-spacing: 2px; margin-bottom: 4px; }
+
+    /* ─── CONTACT STRIP ─── */
+    .contact-strip {
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
+      padding: 72px 0;
+      text-align: center;
+    }
+    .contact-strip h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .contact-strip p {
+      color: rgba(255,255,255,.8);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+    .contact-strip .btn-white {
+      background: white;
+      color: var(--blue-600);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    }
+    .contact-strip .btn-white:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0,0,0,.2); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--blue-900);
+      color: rgba(255,255,255,.7);
+      padding: 72px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.4fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer-brand .logo-text { color: white; font-size: 1.2rem; margin-bottom: 4px; }
+    .footer-brand .logo-sub { color: rgba(255,255,255,.5); }
+    .footer-brand p {
+      font-size: .875rem;
+      line-height: 1.7;
+      margin: 16px 0 24px;
+      max-width: 280px;
+    }
+    .social-links { display: flex; gap: 10px; }
+    .social-link {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .social-link:hover { background: var(--blue-600); border-color: var(--blue-600); color: white; }
+    .footer-col h4 {
+      font-size: .85rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.6);
+      font-size: .875rem;
+      transition: var(--transition);
+    }
+    .footer-links a:hover { color: var(--blue-300); }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: .875rem;
+    }
+    .footer-contact-icon {
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,.07);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .8rem;
+    }
+    .footer-bottom a { color: var(--blue-300); text-decoration: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .nav-links, .login-wrapper { display: none; }
+      .hamburger { display: block; }
+      .hero-inner, .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { display: none; }
+      .blog-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 2rem; }
+    }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">CFI</div>
+      <div>
+        <div class="logo-text">CFI Global</div>
+        <div class="logo-sub">Customer First Innovate</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="career.html">Careers</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="login-wrapper">
+      <button class="login-btn">
+        Login
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="login-dropdown">
+        <a href="#">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 100 10 5 5 0 000-10zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+          Admin Login
+        </a>
+        <a href="#">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Employee Login
+        </a>
+      </div>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Trusted by 500+ enterprises across India
+      </div>
+      <h1>Empowering Businesses with <em>Smart Support</em> Solutions</h1>
+      <p>Delivering high-quality BPO, Call Support & Chat Support services for NBFCs and enterprises — designed to scale with your ambitions.</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-primary">
+          Explore Services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-main">
+        <h3>📊 Performance Dashboard</h3>
+        <div class="stat-row">
+          <div class="stat-pill">
+            <strong>99%</strong>
+            <span>CSAT Score</span>
+          </div>
+          <div class="stat-pill">
+            <strong>24/7</strong>
+            <span>Availability</span>
+          </div>
+          <div class="stat-pill">
+            <strong>1M+</strong>
+            <span>Interactions</span>
+          </div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>Call Resolution Rate</span><span>96%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:96%"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>Chat Response Time</span><span>92%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:92%"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>BPO Efficiency</span><span>98%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:98%"></div></div>
+        </div>
+      </div>
+      <div class="hero-float hero-float-1">
+        <div class="float-icon" style="background:#e8f9ee">✅</div>
+        <div>
+          <div style="font-size:.72rem;color:var(--gray-500)">Status</div>
+          <div>All Systems Active</div>
+        </div>
+      </div>
+      <div class="hero-float hero-float-2">
+        <div class="float-icon" style="background:#fff3e0">⭐</div>
+        <div>
+          <div style="font-size:.72rem;color:var(--gray-500)">Avg. Rating</div>
+          <div>4.9 / 5.0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="services-header fade-in">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-subtitle">End-to-end support solutions tailored for NBFCs, fintechs, and growing enterprises.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">📞</div>
+        <h3>Call Support Services</h3>
+        <p>Professional inbound and outbound call support designed to enhance customer engagement and drive satisfaction at every touchpoint.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">💬</div>
+        <h3>Chat Support Services</h3>
+        <p>Real-time chat support that ensures quick, efficient resolution of customer queries, improving response time and overall user experience.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🏢</div>
+        <h3>BPO Solutions</h3>
+        <p>End-to-end BPO services including customer handling, data entry, and operational support to streamline your entire business workflow.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">📊</div>
+        <h3>CRM Support</h3>
+        <p>Structured data and insights that help businesses manage customer relationships effectively and drive long-term retention.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🔍</div>
+        <h3>Back Office Support</h3>
+        <p>Efficient data processing, documentation, and backend operations to keep your business running smoothly around the clock.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section" id="about">
+  <div class="container about-inner">
+    <div class="about-visual fade-in">
+      <div class="about-bg-card">
+        <h2>Customer First.<br>Innovation Always.</h2>
+        <p>Since our founding, CFI Global has been committed to delivering world-class support solutions that put your customers at the center of everything we do.</p>
+        <div class="about-chips">
+          <span class="about-chip">🏆 Award-Winning Service</span>
+          <span class="about-chip">🌐 Pan-India Presence</span>
+          <span class="about-chip">🔒 ISO Certified</span>
+          <span class="about-chip">⚡ Real-Time Support</span>
+        </div>
+      </div>
+      <div class="about-float-badge">
+        <strong>500+</strong>
+        <span>Happy Clients</span>
+      </div>
+    </div>
+    <div class="about-content fade-in">
+      <div class="section-tag">About Us</div>
+      <h2 class="section-title">About CFI Global</h2>
+      <p class="section-subtitle">CFI Global Pvt. Ltd. is a leading service provider specializing in delivering high-quality BPO, call support, and chat support services. We primarily cater to NBFCs and enterprise clients, helping them streamline customer interactions and improve operational efficiency.</p>
+      <ul class="about-list" style="margin-top: 28px;">
+        <li>Dedicated team of trained professionals available 24/7 across all communication channels</li>
+        <li>Technology-driven workflows with real-time reporting and analytics for maximum transparency</li>
+        <li>Scalable solutions designed to grow alongside your business needs and customer base</li>
+        <li>Deep expertise in NBFC compliance, regulatory requirements, and fintech operations</li>
+        <li>Mission to enhance customer satisfaction through reliable and innovative support solutions</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" style="margin-top: 32px;">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number">1M+</div>
+        <div class="stat-label">Customer Interactions</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number">99%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support Availability</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BLOG ═══ -->
+<section class="section" id="blog">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">Insights</div>
+      <h2 class="section-title">Latest Insights & Vlogs</h2>
+      <p class="section-subtitle">Stay ahead with our expert perspectives on BPO, fintech support, and customer success strategies.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card fade-in">
+        <div class="blog-thumb">🏦</div>
+        <div class="blog-body">
+          <span class="blog-tag">BPO</span>
+          <h3>How BPO is Transforming NBFCs</h3>
+          <p>BPO services are helping NBFCs scale operations efficiently while maintaining high customer satisfaction across all touchpoints.</p>
+          <a href="#" class="blog-read">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-thumb">💳</div>
+        <div class="blog-body">
+          <span class="blog-tag">Fintech</span>
+          <h3>Importance of Customer Support in Fintech</h3>
+          <p>Customer support plays a critical role in building trust and long-term retention in the competitive financial technology sector.</p>
+          <a href="#" class="blog-read">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-thumb">📱</div>
+        <div class="blog-body">
+          <span class="blog-tag">Chat Support</span>
+          <h3>Scaling Business with Chat Support</h3>
+          <p>Live chat solutions enable businesses to handle multiple customers simultaneously, delivering better efficiency and satisfaction.</p>
+          <a href="#" class="blog-read">
+            Read More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <div class="section-tag">Testimonials</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-subtitle" style="margin:0 auto">Trusted by NBFCs, fintechs, and enterprises across India for reliable, scalable support.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card fade-in">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <blockquote>CFI Global helped us streamline our customer support operations efficiently. Their team's responsiveness and professionalism exceeded our expectations from day one.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">NC</div>
+          <div class="testi-meta">
+            <strong>NBFC Client</strong>
+            <span>Head of Operations, Mumbai</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <blockquote>Their chat support system improved our response time significantly. We saw a 40% reduction in customer complaints within the first quarter of engagement.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">FS</div>
+          <div class="testi-meta">
+            <strong>Fintech Startup</strong>
+            <span>CTO, Bangalore</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="quote-icon">"</div>
+        <div class="stars">★★★★★</div>
+        <blockquote>The BPO solutions provided by CFI Global allowed us to focus on core business while they handled our entire back-office operations seamlessly and efficiently.</blockquote>
+        <div class="testi-author">
+          <div class="testi-avatar">EC</div>
+          <div class="testi-meta">
+            <strong>Enterprise Client</strong>
+            <span>VP Operations, Delhi NCR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- ═══ TEAM ═══ -->
+<section class="section services" id="team">
+  <div class="container">
+    <div class="services-header fade-in">
+      <div class="section-tag">Our Team</div>
+      <h2 class="section-title">Meet Our Leadership</h2>
+      <p class="section-subtitle">Meet the dedicated leaders driving CFI Global forward with expertise in banking and finance.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
+
+      <!-- Aakash Yadav -->
+      <div class="service-card fade-in" style="padding:0;overflow:hidden;">
+        <div style="height:320px;overflow:hidden;background:var(--blue-50);">
+          <img src="aakash.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+        </div>
+        <div style="padding:24px;">
+          <div style="font-size:1rem;font-weight:700;color:var(--blue-900);margin-bottom:6px;">Aakash Yadav</div>
+          <div style="display:inline-block;background:var(--blue-50);color:var(--blue-700);font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:50px;margin-bottom:12px;">Founder &amp; CEO</div>
+          <p style="font-size:.82rem;color:var(--gray-500);line-height:1.65;margin-bottom:14px;">Aakash brings 5+ years of experience in banking and financial sector, founding CFI Global to deliver innovative financial solutions. His leadership focuses on strategic growth and client success in competitive markets.</p>
+          <a href="mailto:ceo@cfiglobal.in" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--blue-600);font-weight:500;text-decoration:none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            ceo@cfiglobal.in
+          </a>
+        </div>
+      </div>
+
+      <!-- Sargam Deo -->
+      <div class="service-card fade-in" style="padding:0;overflow:hidden;">
+        <div style="height:320px;overflow:hidden;background:var(--blue-50);">
+          <img src="sargam.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+        </div>
+        <div style="padding:24px;">
+          <div style="font-size:1rem;font-weight:700;color:var(--blue-900);margin-bottom:6px;">Sargam Deo</div>
+          <div style="display:inline-block;background:var(--blue-50);color:var(--blue-700);font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:50px;margin-bottom:12px;">Director</div>
+          <p style="font-size:.82rem;color:var(--gray-500);line-height:1.65;margin-bottom:14px;">Ms. Sargam Deo possesses 7+ years of experience in the field, guiding operational excellence and key partnerships. She excels in risk management and business development strategies.</p>
+          <a href="mailto:director@cfiglobal.in" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--blue-600);font-weight:500;text-decoration:none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            director@cfiglobal.in
+          </a>
+        </div>
+      </div>
+
+      <!-- Ankita Thakur -->
+      <div class="service-card fade-in" style="padding:0;overflow:hidden;">
+        <div style="height:320px;overflow:hidden;background:var(--blue-50);">
+          <img src="ankita.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+        </div>
+        <div style="padding:24px;">
+          <div style="font-size:1rem;font-weight:700;color:var(--blue-900);margin-bottom:6px;">Ankita Thakur</div>
+          <div style="display:inline-block;background:var(--blue-50);color:var(--blue-700);font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:50px;margin-bottom:12px;">Core Team</div>
+          <p style="font-size:.82rem;color:var(--gray-500);line-height:1.65;margin-bottom:14px;">Ankita contributes 2 years of hands-on experience, specializing in operational support and client relations. Her fresh insights enhance team efficiency and project delivery.</p>
+          <a href="mailto:ankita@cfiglobal.in" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--blue-600);font-weight:500;text-decoration:none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            ankita@cfiglobal.in
+          </a>
+        </div>
+      </div>
+
+      <!-- Priti Dutta -->
+      <div class="service-card fade-in" style="padding:0;overflow:hidden;">
+        <div style="height:320px;overflow:hidden;background:var(--blue-50);">
+          <img src="priti.jpeg.png" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+        </div>
+        <div style="padding:24px;">
+          <div style="font-size:1rem;font-weight:700;color:var(--blue-900);margin-bottom:6px;">Priti Dutta</div>
+          <div style="display:inline-block;background:var(--blue-50);color:var(--blue-700);font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:50px;margin-bottom:12px;">Core Team</div>
+          <p style="font-size:.82rem;color:var(--gray-500);line-height:1.65;margin-bottom:14px;">Priti offers 2 years of experience focusing on sales and customer engagement. She supports core initiatives with strong analytical skills and dedication.</p>
+          <a href="mailto:Priti@cfiglobal.in" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--blue-600);font-weight:500;text-decoration:none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            Priti@cfiglobal.in
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══ CONTACT STRIP ═══ -->
+<section class="contact-strip" id="contact">
+  <div class="container">
+    <h2>Ready to Transform Your Customer Experience?</h2>
+    <p>Join 500+ businesses that trust CFI Global for their support operations.</p>
+    <a href="mailto:support@cfiglobal.com" class="btn-white">
+      📧 Get Started Today
+    </a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="careers">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-mark">CFI</div>
+          <div>
+            <div class="logo-text">CFI Global</div>
+            <div class="logo-sub">Customer First Innovate</div>
+          </div>
+        </div>
+        <p>We are a customer-centric service provider specializing in high-quality support solutions for NBFCs and enterprises across India.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="LinkedIn">in</a>
+          <a href="#" class="social-link" title="Twitter">𝕏</a>
+          <a href="#" class="social-link" title="Facebook">f</a>
+          <a href="#" class="social-link" title="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog & Vlogs</a></li>
+          <li><a href="#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#">Call Support</a></li>
+          <li><a href="#">Chat Support</a></li>
+          <li><a href="#">BPO Solutions</a></li>
+          <li><a href="#">CRM Support</a></li>
+          <li><a href="#">Back Office</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📧</div>
+          <span>support@cfiglobal.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <span>+91 XXXXX XXXXX</span>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📍</div>
+          <span>India — Pan-India Operations</span>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">🕐</div>
+          <span>24/7 Support Available</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CFI Global Pvt. Ltd. (Customer First Innovate Global). All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Scroll Animations */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* Navbar shadow on scroll */
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.boxShadow = window.scrollY > 20
+      ? '0 4px 24px rgba(10,102,194,.1)'
+      : 'none';
+  });
+
+  /* Mobile menu toggle */
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    const login = document.querySelector('.login-wrapper');
+    const showing = links.style.display === 'flex';
+    links.style.cssText = showing
+      ? ''
+      : 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:white;padding:16px 24px 24px;border-bottom:1px solid var(--gray-100);box-shadow:var(--shadow-md);z-index:998';
+    login.style.display = showing ? '' : 'block';
+  }
+</script>
+</body>
+</html>
