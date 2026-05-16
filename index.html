@@ -233,6 +233,21 @@
     margin-top: 4px;
   }
 
+  .team-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(200,164,90,0.45);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  @media (max-width: 860px) {
+    .team-grid {
+      grid-template-columns: 1fr !important;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   /* ─── SECTION COMMONS ─── */
   section { padding: 100px 5%; }
 
@@ -870,6 +885,185 @@
         <li>UI/UX Design & Digital Branding</li>
       </ul>
     </div>
+  </div>
+</section>
+
+  <!-- ─── CORE TEAM ─── -->
+<section id="team" style="background: var(--navy);">
+  <div class="reveal" style="text-align: center; margin-bottom: 0;">
+    <div class="section-tag">The People Behind CFI Global</div>
+    <h2>Meet Our <span>Core Team</span></h2>
+    <p class="section-desc" style="margin: 0.75rem auto 0; text-align: center;">
+      Seasoned professionals committed to delivering financial excellence and client-first service.
+    </p>
+  </div>
+
+  <div class="team-grid reveal" style="
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  ">
+
+    <!-- Member 1 -->
+    <div class="team-card" style="
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    ">
+      <div style="
+        position: absolute; top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      "></div>
+      <div class="team-photo-wrap" style="
+        width: 120px; height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        background: rgba(200,164,90,0.1);
+        border: 2px solid var(--border);
+        overflow: hidden;
+        display: flex; align-items: center; justify-content: center;
+      ">
+        <!-- Replace src with actual photo path e.g. src="team/akaash.jpg" -->
+        <img src="akaash.jpeg" alt="Mr. Akaash Yadav"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div style="
+          display: none;
+          width: 100%; height: 100%;
+          align-items: center; justify-content: center;
+          font-family: 'Playfair Display', serif;
+          font-size: 2.2rem; font-weight: 700;
+          color: var(--gold);
+        ">AY</div>
+      </div>
+      <h3 style="
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem; font-weight: 700;
+        margin-bottom: 0.4rem;
+      ">Mr. Akaash Yadav</h3>
+      <div style="
+        font-size: 0.75rem; color: var(--gold);
+        letter-spacing: 0.16em; text-transform: uppercase;
+        font-weight: 600; margin-bottom: 1rem;
+      ">Chief Executive Officer</div>
+      <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7;">
+        Visionary leader driving CFI Global's mission to make financial services accessible, transparent, and client-first across India and beyond.
+      </p>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-card" style="
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    ">
+      <div style="
+        position: absolute; top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      "></div>
+      <div class="team-photo-wrap" style="
+        width: 120px; height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        background: rgba(200,164,90,0.1);
+        border: 2px solid var(--border);
+        overflow: hidden;
+        display: flex; align-items: center; justify-content: center;
+      ">
+        <!-- Replace src with actual photo path e.g. src="team/sargam.jpg" -->
+        <img src="sargam.jpeg" alt="Ms. Sargam Deo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div style="
+          display: none;
+          width: 100%; height: 100%;
+          align-items: center; justify-content: center;
+          font-family: 'Playfair Display', serif;
+          font-size: 2.2rem; font-weight: 700;
+          color: var(--gold);
+        ">SD</div>
+      </div>
+      <h3 style="
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem; font-weight: 700;
+        margin-bottom: 0.4rem;
+      ">Ms. Sargam Deo</h3>
+      <div style="
+        font-size: 0.75rem; color: var(--gold);
+        letter-spacing: 0.16em; text-transform: uppercase;
+        font-weight: 600; margin-bottom: 1rem;
+      ">Managing Director</div>
+      <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7;">
+        Strategic force behind CFI Global's growth, partnerships, and operational excellence — ensuring every client relationship is built on trust and results.
+      </p>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="team-card" style="
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    ">
+      <div style="
+        position: absolute; top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      "></div>
+      <div class="team-photo-wrap" style="
+        width: 120px; height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        background: rgba(200,164,90,0.1);
+        border: 2px solid var(--border);
+        overflow: hidden;
+        display: flex; align-items: center; justify-content: center;
+      ">
+        <!-- Replace src with actual photo path e.g. src="team/nikita.jpg" -->
+        <img src="nikita.jpeg" alt="Ms. Nikita Khandelwal"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div style="
+          display: none;
+          width: 100%; height: 100%;
+          align-items: center; justify-content: center;
+          font-family: 'Playfair Display', serif;
+          font-size: 2.2rem; font-weight: 700;
+          color: var(--gold);
+        ">NK</div>
+      </div>
+      <h3 style="
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem; font-weight: 700;
+        margin-bottom: 0.4rem;
+      ">Ms. Nikita Khandelwal</h3>
+      <div style="
+        font-size: 0.75rem; color: var(--gold);
+        letter-spacing: 0.16em; text-transform: uppercase;
+        font-weight: 600; margin-bottom: 1rem;
+      ">Human Resources</div>
+      <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7;">
+        The heart of CFI Global's culture — championing talent, building high-performing teams, and nurturing an environment where people and clients both thrive.
+      </p>
+    </div>
+
   </div>
 </section>
 
