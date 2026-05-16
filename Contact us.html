@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | CFI Global</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --navy: #0a1628;
+  --navy-mid: #112240;
+  --gold: #c8a45a;
+  --gold-light: #e8c97a;
+  --white: #ffffff;
+  --text-muted: #8a9ab8;
+  --border: rgba(200,164,90,0.2);
+  --card-bg: rgba(17,34,64,0.85);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  height:72px;
+  padding:0 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(10,22,40,0.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-mark{
+  width:52px;
+  height:52px;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.logo-mark img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  font-weight:700;
+}
+
+.logo-sub{
+  font-size:0.65rem;
+  color:var(--gold);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:2rem;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--text-muted);
+  font-size:0.9rem;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--gold);
+}
+
+.nav-btn{
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy) !important;
+  padding:0.7rem 1.4rem;
+  border-radius:8px;
+  font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+  min-height:55vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:130px 5% 80px;
+  position:relative;
+  overflow:hidden;
+  background:
+  radial-gradient(circle at top right, rgba(200,164,90,0.1), transparent 40%),
+  linear-gradient(160deg,#0a1628 0%,#112240 100%);
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+  linear-gradient(rgba(200,164,90,0.04) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(200,164,90,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+}
+
+.hero-tag{
+  display:inline-block;
+  padding:8px 18px;
+  border:1px solid var(--border);
+  border-radius:100px;
+  color:var(--gold);
+  font-size:0.75rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  margin-bottom:1.8rem;
+  background:rgba(200,164,90,0.08);
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,6vw,4.8rem);
+  line-height:1.1;
+  margin-bottom:1.5rem;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero p{
+  color:#b0bfd4;
+  line-height:1.8;
+  font-size:1.05rem;
+}
+
+/* CONTACT SECTION */
+
+.contact-section{
+  padding:100px 5%;
+  background:var(--navy-mid);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+}
+
+.section-tag{
+  color:var(--gold);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-size:0.75rem;
+  margin-bottom:1rem;
+  font-weight:600;
+}
+
+.contact-info h2{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  margin-bottom:1rem;
+}
+
+.contact-info h2 span{
+  color:var(--gold);
+}
+
+.contact-info p{
+  color:var(--text-muted);
+  line-height:1.8;
+  margin-bottom:2.5rem;
+}
+
+.contact-items{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+
+.contact-item{
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+}
+
+.contact-icon{
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  background:rgba(200,164,90,0.1);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.2rem;
+}
+
+.contact-item strong{
+  display:block;
+  color:var(--gold);
+  margin-bottom:6px;
+  letter-spacing:0.08em;
+  font-size:0.8rem;
+  text-transform:uppercase;
+}
+
+.contact-item span,
+.contact-item a{
+  color:#b0bfd4;
+  text-decoration:none;
+  line-height:1.6;
+  transition:0.3s;
+}
+
+.contact-item a:hover{
+  color:var(--gold);
+}
+
+/* FORM */
+
+.contact-form{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:2.5rem;
+}
+
+.contact-form h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;
+  margin-bottom:2rem;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+
+.form-group{
+  margin-bottom:1.2rem;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:8px;
+  color:var(--text-muted);
+  font-size:0.82rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:0.95rem 1rem;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:rgba(10,22,40,0.9);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  outline:none;
+  transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  border-color:var(--gold);
+}
+
+.form-group textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.submit-btn{
+  width:100%;
+  padding:1rem;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy);
+  font-weight:700;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.submit-btn:hover{
+  opacity:0.9;
+  transform:translateY(-2px);
+}
+
+/* MAP */
+
+.map-section{
+  padding:0 5% 100px;
+  background:var(--navy-mid);
+}
+
+.map-box{
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+
+.map-box iframe{
+  width:100%;
+  height:450px;
+  border:none;
+}
+
+/* FOOTER */
+
+footer{
+  background:#060f1e;
+  border-top:1px solid var(--border);
+  padding:2.5rem 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+
+.footer-copy{
+  color:var(--text-muted);
+  font-size:0.85rem;
+}
+
+.footer-links{
+  display:flex;
+  gap:1.5rem;
+}
+
+.footer-links a{
+  text-decoration:none;
+  color:var(--text-muted);
+  transition:0.3s;
+}
+
+.footer-links a:hover{
+  color:var(--gold);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="nav-logo">
+
+  <div class="logo-mark">
+    <img src="logo.jpeg" alt="CFI Logo">
+  </div>
+
+  <div>
+    <div class="logo-text">Client First Innovate</div>
+    <div class="logo-sub">Pvt. Ltd. | CFI Global</div>
+  </div>
+
+</div>
+
+<ul class="nav-links">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Partners</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#" class="nav-btn">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-tag">
+Connect With CFI Global
+</div>
+
+<h1>Let's Build Your <span>Future</span> Together</h1>
+
+<p>
+Whether you need financial services, insurance support,
+NRI banking solutions, or IT development services,
+our experts are ready to help you with the best solutions.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section">
+
+<div class="contact-grid">
+
+<!-- LEFT SIDE -->
+
+<div class="contact-info">
+
+<div class="section-tag">Get In Touch</div>
+
+<h2>Contact <span>CFI Global</span></h2>
+
+<p>
+Reach out to our team for loans, insurance, software development,
+financial planning, or NRI banking solutions.
+We provide dedicated support and personalized consultation.
+</p>
+
+<div class="contact-items">
+
+<div class="contact-item">
+  <div class="contact-icon">📞</div>
+  <div>
+    <strong>Phone</strong>
+    <a href="tel:+919403892936">+91 94038 92936</a>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">✉️</div>
+  <div>
+    <strong>Email</strong>
+    <a href="mailto:info@cfiglobal.im">info@cfiglobal.im</a>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">📍</div>
+  <div>
+    <strong>Office Locations</strong>
+    <span>Mohali · Delhi · Patna · Ranchi · Kolkata</span>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">🕒</div>
+  <div>
+    <strong>Working Hours</strong>
+    <span>Monday - Saturday | 9:00 AM - 6:00 PM</span>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">📸</div>
+  <div>
+    <strong>Instagram</strong>
+    <a href="https://instagram.com/cfiglobal" target="_blank">
+      @cfiglobal
+    </a>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">💼</div>
+  <div>
+    <strong>LinkedIn</strong>
+    <a href="https://linkedin.com/company/cfiglobal" target="_blank">
+      CFI Global
+    </a>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="contact-form">
+
+<h3>Request a Callback</h3>
+
+<form>
+
+<div class="form-row">
+
+<div class="form-group">
+<label>First Name</label>
+<input type="text" placeholder="Rahul">
+</div>
+
+<div class="form-group">
+<label>Last Name</label>
+<input type="text" placeholder="Sharma">
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" placeholder="+91 XXXXX XXXXX">
+</div>
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" placeholder="you@email.com">
+</div>
+
+<div class="form-group">
+<label>Service Interested In</label>
+
+<select>
+<option>Select Service</option>
+<option>Home Loan</option>
+<option>Personal Loan</option>
+<option>Business Loan</option>
+<option>Insurance</option>
+<option>NRI Banking</option>
+<option>Software Development</option>
+<option>Financial Planning</option>
+</select>
+
+</div>
+
+<div class="form-group">
+<label>Your Message</label>
+<textarea placeholder="Tell us how we can help you..."></textarea>
+</div>
+
+<button type="submit" class="submit-btn">
+Send Request →
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MAP -->
+
+<section class="map-section">
+
+<div class="map-box">
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.48198706575!2d77.06889993895978!3d28.527280343608838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d3f1f0e2f7d%3A0x8c4c9f8d7e8f4c2b!2sNew%20Delhi!5e0!3m2!1sen!2sin!4v1715852700000!5m2!1sen!2sin"
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-copy">
+© 2026 Client First Innovate Pvt Ltd | CFI Global. All Rights Reserved.
+</div>
+
+<div class="footer-links">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Partners</a>
+<a href="#">Contact</a>
+</div>
+
+</footer>
+
+</body>
+</html>
