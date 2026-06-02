@@ -711,8 +711,17 @@
   }
 
   /* ─── RESPONSIVE ─── */
-  @media (max-width: 860px) {
-    .nav-links { display: none; }
+ @media (max-width: 860px) {
+
+    .nav-links {
+        display: flex;
+        gap: 0.8rem;
+    }
+
+    .nav-links li:not(:last-child) {
+        display: none;
+    }
+
     .services-header { grid-template-columns: 1fr; gap: 1rem; }
     .specialty-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -721,7 +730,8 @@
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
-  }
+
+}
 </style>
 </head>
 <body>
@@ -735,14 +745,15 @@
       <div class="logo-sub">Pvt. Ltd. &nbsp;|&nbsp; CFI Global</div>
     </div>
   </div>
-  <ul class="nav-links">
+ <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#partners">Partners</a></li>
-    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#why-us">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="https://cfiglobal.peopleapps.in/" class="nav-cta">Log In</a></li>
-  </ul>
-</nav>
+</ul>
 
 <!-- HERO -->
 <section id="hero">
@@ -1113,8 +1124,9 @@
     <a href="#services">Services</a>
     <a href="#partners">Partners</a>
     <a href="#specialties">Specialties</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <a href="#team">Team</a>
+    <a href="contact.html">Contact</a>
+</div>
 </footer>
 
 <script>
