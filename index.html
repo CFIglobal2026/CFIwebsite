@@ -1,1241 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Client First Innovate Pvt Ltd | CFI Global</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --navy: #0a1628;
-    --navy-mid: #112240;
-    --gold: #c8a45a;
-    --gold-light: #e8c97a;
-    --cream: #f5f0e8;
-    --white: #ffffff;
-    --text-muted: #8a9ab8;
-    --border: rgba(200,164,90,0.2);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    overflow-x: hidden;
-}
-
-/* ================= NAV ================= */
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 72px;
-    z-index: 1000;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 40px;
-
-    background: rgba(10,22,40,0.92);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-}
-
-.nav-logo {
-    font-weight: 700;
-    color: var(--gold);
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-muted);
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-.nav-cta {
-    padding: 10px 18px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* ================= HERO ================= */
-
-#hero {
-    position: relative;
-    min-height: 100vh;
-    padding: 140px 5% 100px;
-    overflow: hidden;
-}
-
-/* BACKGROUND */
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    background:
-        radial-gradient(circle at 75% 30%, rgba(200,164,90,0.12), transparent 35%),
-        radial-gradient(circle at 20% 70%, rgba(17,34,64,0.7), transparent 50%),
-        linear-gradient(135deg, #081221, #102544, #081221);
-}
-
-/* GRID */
-.hero-grid {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    background-image:
-        linear-gradient(rgba(200,164,90,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,164,90,0.03) 1px, transparent 1px);
-
-    background-size: 60px 60px;
-}
-
-/* CONTENT */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1100px;
-    margin: auto;
-    text-align: center;
-}
-
-/* TAG */
-.hero-tag {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 999px;
-    border: 1px solid rgba(200,164,90,0.25);
-    background: rgba(200,164,90,0.08);
-    color: var(--gold);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-/* HEADING */
-.hero-content h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.hero-content h1 em {
-    color: var(--gold);
-    font-style: normal;
-}
-
-/* DESCRIPTION */
-.hero-desc {
-    max-width: 750px;
-    margin: 0 auto 35px;
-    color: #b8c6d8;
-    line-height: 1.8;
-}
-
-/* BUTTONS */
-.hero-btns {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
-}
-
-.btn-primary,
-.btn-outline {
-    padding: 14px 28px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-}
-
-.btn-outline {
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-}
-
-/* STATS */
-.hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-num {
-    font-family: "Playfair Display", serif;
-    font-size: 2.2rem;
-    color: var(--gold);
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 5px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    nav {
-        padding: 0 20px;
-    }
-
-    .hero-btns {
-        flex-direction: column;
-    }
-
-    .btn-primary,
-    .btn-outline {
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-stats {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-    <div class="nav-logo">CFI Global</div>
-
-    <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <a class="nav-cta" href="#contact">Get Started</a>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-
-    <div class="hero-content">
-
-        <div class="hero-tag">
-            Trusted Workforce Solutions
-        </div>
-
-        <h1>
-            Connecting <em>Exceptional Talent</em><br>
-            With Leading Organizations
-        </h1>
-
-        <p class="hero-desc">
-            Client First Innovate Pvt Ltd delivers recruitment, staffing,
-            outsourcing, and consulting solutions that help businesses scale.
-        </p>
-
-        <div class="hero-btns">
-            <a href="#contact" class="btn-primary">Get Started</a>
-            <a href="#services" class="btn-outline">Explore Services</a>
-        </div>
-
-        <div class="hero-stats">
-            <div class="stat">
-                <div class="stat-num">500+</div>
-                <div class="stat-label">Clients</div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-num">10K+</div>
-                <div class="stat-label">Placements</div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-num">12+</div>
-                <div class="stat-label">Industries</div>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-</body>
-</html>
-
-
-  /* ─── SERVICES ─── */
-  #services {
-    background: var(--navy-mid);
-    position: relative;
-    overflow: hidden;
-  }
-
-  #services::before {
-    content: '';
-    position: absolute; top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(200,164,90,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .services-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
-    align-items: end;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .service-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::after {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .service-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(200,164,90,0.45);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-  }
-
-  .service-card:hover::after { opacity: 1; }
-
-  .service-icon {
-    width: 52px; height: 52px;
-    background: rgba(200,164,90,0.12);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-
-  .service-card p {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    line-height: 1.7;
-  }
-
-  /* ─── PARTNERS ─── */
-  #partners { background: var(--navy); }
-
-  .partners-header {
-    text-align: center; margin-bottom: 3.5rem;
-  }
-
-  .partners-section { margin-bottom: 3.5rem; }
-
-  .partners-section-title {
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-  }
-
-  .partners-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .partner-chip {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.65rem 1.4rem;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--white);
-    letter-spacing: 0.04em;
-    transition: border-color 0.25s, background 0.25s;
-    cursor: default;
-  }
-
-  .partner-chip:hover {
-    border-color: rgba(200,164,90,0.5);
-    background: rgba(200,164,90,0.08);
-    color: var(--gold-light);
-  }
-
-  /* ─── NRI + IT ─── */
-  #specialties {
-    background: var(--navy-mid);
-  }
-
-  .specialty-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3.5rem;
-  }
-
-  .specialty-card {
-    background: rgba(10,22,40,0.7);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 2.5rem;
-    position: relative; overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .specialty-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.3);
-  }
-
-  .logo-mark{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 55px;
-    height: 55px;
-    overflow: hidden;
-}
-
-.logo-mark img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;   /* keeps logo properly fitted */
-}
-
-  .specialty-card .bg-num {
-    position: absolute; right: 1.5rem; top: 1rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 6rem;
-    font-weight: 900;
-    color: rgba(200,164,90,0.05);
-    line-height: 1;
-    user-select: none;
-  }
-
-  .specialty-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-
-  .specialty-card p {
-    color: var(--text-muted);
-    line-height: 1.75;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .specialty-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-
-  .specialty-list li {
-    font-size: 0.875rem;
-    color: #b0bfd4;
-    display: flex; align-items: center; gap: 8px;
-  }
-
-  .specialty-list li::before {
-    content: '▸';
-    color: var(--gold);
-    font-size: 0.75rem;
-  }
-
-  /* ─── WHY US ─── */
-  #why-us { background: var(--navy); }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3.5rem;
-  }
-
-  .why-card {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    transition: border-color 0.3s, transform 0.3s;
-  }
-
-  .why-card:hover {
-    border-color: rgba(200,164,90,0.45);
-    transform: translateY(-4px);
-  }
-
-  .why-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .why-card h4 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .why-card p {
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    line-height: 1.6;
-  }
-
-  /* ─── CONTACT ─── */
-  #contact {
-    background: linear-gradient(160deg, var(--navy-mid) 0%, var(--navy) 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  #contact::before {
-    content: '';
-    position: absolute; bottom: -150px; left: -150px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(200,164,90,0.07) 0%, transparent 65%);
-    pointer-events: none;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 5rem;
-    align-items: start;
-  }
-
-  .contact-info { position: relative; z-index: 1; }
-
-  .contact-items {
-    display: flex; flex-direction: column; gap: 1.5rem;
-    margin-top: 2.5rem;
-  }
-
-  .contact-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-  }
-
-  .contact-icon {
-    width: 44px; height: 44px; flex-shrink: 0;
-    background: rgba(200,164,90,0.1);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem;
-  }
-
-  .contact-item-text strong {
-    display: block;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 4px;
-    font-weight: 600;
-  }
-
-  .contact-item-text span, .contact-item-text a {
-    font-size: 0.9rem;
-    color: #b0bfd4;
-    line-height: 1.5;
-    text-decoration: none;
-  }
-
-  .contact-item-text a:hover { color: var(--gold); }
-
-  .contact-form {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 2.5rem;
-    position: relative; z-index: 1;
-  }
-
-  .contact-form h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    margin-bottom: 1.75rem;
-    font-weight: 700;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
-  .form-group label { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; font-weight: 500; }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    background: rgba(10,22,40,0.8);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    outline: none;
-    transition: border-color 0.25s;
-    width: 100%;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--gold);
-  }
-
-  .form-group select option { background: var(--navy-mid); }
-  .form-group textarea { resize: vertical; min-height: 100px; }
-
-  .form-submit {
-    width: 100%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    border: none;
-    border-radius: 8px;
-    padding: 0.9rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 0.05em;
-    transition: opacity 0.25s, transform 0.2s;
-    margin-top: 0.5rem;
-  }
-
-  .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
-
-  /* ─── FOOTER ─── */
-  footer {
-    background: #060f1e;
-    border-top: 1px solid var(--border);
-    padding: 3rem 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
-  .footer-brand { display: flex; align-items: center; gap: 12px; }
-
-  .footer-copy {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-align: center;
-  }
-
-  .footer-links {
-    display: flex; gap: 1.5rem;
-  }
-
-  .footer-links a {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--gold); }
-
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.5; transform: scale(0.85); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ─── RESPONSIVE ─── */
-@media (max-width: 860px) {
-
-    nav {
-        flex-direction: column;
-        height: auto;
-        padding: 12px 5%;
-        gap: 12px;
-    }
-
-    .nav-logo {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        width: 100%;
-        padding: 0;
-    }
-
-    .nav-links li {
-        list-style: none;
-    }
-
-    .nav-links a {
-        font-size: 0.85rem;
-    }
-
-    .nav-cta {
-        padding: 0.5rem 1rem;
-    }
-
-    .services-header {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .specialty-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .hero-stats {
-        position: static;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 3rem;
-    }
-
-    #hero {
-        flex-direction: column;
-        padding-top: 160px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFI Global | Client First Innovate Pvt Ltd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-mid: #112240;
+            --gold: #c8a45a;
+            --gold-light: #e8c97a;
+            --text-muted: #8a9ab8;
+            --white: #ffffff;
+            --border: rgba(200, 164, 90, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--navy);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* --- GLOBAL ALIGNMENT RULE --- */
+        section {
+            width: 100%;
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        p.section-subtitle {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            min-height: 100vh;
+            justify-content: center;
+            background: radial-gradient(circle at top center, var(--navy-mid), var(--navy));
+            padding-top: 120px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero-title em {
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            margin-right: 15px;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* --- STATS SECTION --- */
+        #stats {
+            background-color: var(--navy-mid);
+            padding: 60px 10%;
+            flex-direction: row;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .stat-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- SERVICES GRID --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--navy-mid);
+            border: 1px solid var(--border);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- WHY US (PROCESS) --- */
+        #why-us {
+            background: var(--navy-mid);
+        }
+
+        .list-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .list-item {
+            padding: 20px 0 20px 30px;
+            border-left: 2px solid var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .list-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .list-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            .nav-links {
+                margin-top: 15px;
+            }
+            .btn-primary {
+                margin-bottom: 15px;
+                margin-right: 0;
+                display: block;
+            }
+            .stats-grid {
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <div class="logo-mark"><img src="logo.jpeg" alt="Logo"></div>
-    <div>
-      <div class="logo-text">Client First Innovate</div>
-      <div class="logo-sub">Pvt. Ltd. &nbsp;|&nbsp; CFI Global</div>
-    </div>
-  </div>
-<ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#partners">Partners</a></li>
-    <li><a href="#specialties">Specialties</a></li>
-    <li><a href="#why-us">Why Us</a></li>
-    <li><a href="https://cfiglobal.peopleapps.in/" class="nav-cta">Log In</a></li>
-</ul>
+    <nav>
+        <a href="#hero" class="logo">CFI Global</a>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Trusted Financial & Technology Partner</div>
-    <h1>Where <em>Clients</em> Come<br>First. Always.</h1>
-    <p class="hero-desc">Client First Innovate Pvt Ltd delivers end-to-end banking, loan, insurance, and IT solutions — backed by partnerships with India's leading banks and insurers across Mohali, Delhi, Patna, Ranchi & Kolkata.</p>
-    <div class="hero-btns">
-      <a href="contact.html" class="btn-primary">Get a Free Consultation</a>
-      <a href="#services" class="btn-outline">Explore Services</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-num">10+</div>
-      <div class="stat-label">Bank Partners</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">7+</div>
-      <div class="stat-label">Insurers</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">5</div>
-      <div class="stat-label">City Offices</div>
-    </div>
-  </div>
-</section>
+    <section id="hero">
+        <div class="container">
+            <div class="hero-tag">Where Clients Come First. Always.</div>
+            <h1 class="hero-title">Financial Empowerment & <br><em>Digital Growth</em></h1>
+            <p class="hero-desc">
+                CFI Global is your single-window solution delivering end-to-end banking, loans, insurance, and custom IT software—backed by partnerships with India's leading banks and insurers.
+            </p>
+            <div>
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#contact" class="btn btn-outline">Get a Free Consultation</a>
+            </div>
+        </div>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="services-header reveal">
-    <div>
-      <div class="section-tag">What We Do</div>
-      <h2>Comprehensive <span>Financial</span><br>& Tech Services</h2>
-    </div>
-    <p class="section-desc">From home loans to life cover, NRI banking to enterprise software — CFI Global is your single-window solution for financial empowerment and digital growth.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon">🏦</div>
-      <h3>Banking Loans</h3>
-      <p>Home loans, personal loans, business loans, and more — facilitated through our multi-bank tie-ups for the fastest approvals and best rates.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🛡️</div>
-      <h3>Insurance Solutions</h3>
-      <p>Life, health, motor, and general insurance from India's top providers. We compare, advise, and secure the right coverage for every need.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🤝</div>
-      <h3>Customer Support</h3>
-      <p>Dedicated relationship managers and end-to-end customer service — from application to disbursement and beyond.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🌐</div>
-      <h3>NRI Banking Solutions</h3>
-      <p>Specialised NRI accounts, remittances, investments, and property loans — expert guidance for the Indian diaspora worldwide.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">💻</div>
-      <h3>IT & Software Development</h3>
-      <p>Custom web & mobile applications, enterprise software, and digital transformation solutions tailored for the BFSI sector and beyond.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">📊</div>
-      <h3>Financial Planning</h3>
-      <p>Goal-based advisory on investment, tax planning, retirement, and wealth management through our certified experts.</p>
-    </div>
-  </div>
-</section>
+    <section id="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Bank Partners</p>
+            </div>
+            <div class="stat-item">
+                <h3>7+</h3>
+                <p>Insurers</p>
+            </div>
+            <div class="stat-item">
+                <h3>5</h3>
+                <p>City Offices</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Customer Support</p>
+            </div>
+        </div>
+    </section>
 
-<!-- PARTNERS -->
-<section id="partners">
-  <div class="partners-header reveal">
-    <div class="section-tag">Our Ecosystem</div>
-    <h2>Trusted <span>Partners</span></h2>
-    <p class="section-desc" style="margin:0.75rem auto 0; text-align:center;">We collaborate with India's most reputed banks and insurance companies so you always get the best deals.</p>
-  </div>
+    <section id="services">
+        <div class="container">
+            <h2>Our Core Ecosystem</h2>
+            <p class="section-subtitle">Comprehensive solutions tailored for individuals, businesses, and the BFSI sector.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏦 Banking & Loans</h3>
+                    <p>Home, personal, and business loans facilitated through multi-bank tie-ups for the fastest approvals and highly competitive rates.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🛡️ Insurance Solutions</h3>
+                    <p>Life, health, and motor insurance from India's top providers. We compare, advise, and secure the exact coverage you need.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌐 NRI Banking</h3>
+                    <p>Empowering the Indian diaspora worldwide with NRE/NRO accounts, home loans, and secure remittance channels.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💻 IT & Software</h3>
+                    <p>Custom web applications, fintech platforms, API integrations, and digital transformations focused on scalability.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📊 Financial Planning</h3>
+                    <p>Goal-based advisory on investments, tax planning, and wealth management guided by our certified financial experts.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🤝 Dedicated Support</h3>
+                    <p>End-to-end customer service equipped with dedicated relationship managers ensuring a seamless experience from start to finish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="partners-section reveal">
-    <div class="partners-section-title">🏦 Banking Partners — Loans</div>
-    <div class="partners-row">
-      <div class="partner-chip">Axis Bank</div>
-      <div class="partner-chip">HDFC Bank</div>
-      <div class="partner-chip">ICICI Bank</div>
-      <div class="partner-chip">IDFC First Bank</div>
-      <div class="partner-chip">Kotak Mahindra</div>
-      <div class="partner-chip">Yes Bank</div>
-      <div class="partner-chip">AU Small Finance</div>
-    </div>
-  </div>
+    <section id="why-us">
+        <div class="container">
+            <h2>Built on Trust, Driven by Results</h2>
+            <p class="section-subtitle">Why thousands of clients across Mohali, Delhi, Patna, Ranchi, and Kolkata choose CFI Global.</p>
+            
+            <div class="list-container">
+                <div class="list-item">
+                    <h4>Multi-Bank Access</h4>
+                    <p>Our 10+ direct bank tie-ups (including HDFC, ICICI, Axis) ensure you always get the most competitive rates available.</p>
+                </div>
+                <div class="list-item">
+                    <h4>360° End-to-End Service</h4>
+                    <p>We are a single partner for your loans, insurance, wealth management, and even IT infrastructure.</p>
+                </div>
+                <div class="list-item">
+                    <h4>Local Presence, Global Reach</h4>
+                    <p>5 robust local offices combined with comprehensive NRI support means we are exactly where you need us to be.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="partners-section reveal">
-    <div class="partners-section-title">🛡️ Insurance Partners</div>
-    <div class="partners-row">
-      <div class="partner-chip">Bajaj Allianz</div>
-      <div class="partner-chip">TATA AIA Life</div>
-      <div class="partner-chip">HDFC Ergo</div>
-      <div class="partner-chip">Aditya Birla Sun Life</div>
-      <div class="partner-chip">Axis Max Life</div>
-      <div class="partner-chip">ICICI Prudential</div>
-      <div class="partner-chip">& Many More</div>
-    </div>
-  </div>
-</section>
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Grow Together</h2>
+            <p class="section-subtitle">Reach out today to connect with our expert relationship managers.</p>
+            <a href="mailto:info@cfiglobal.in" class="btn btn-primary">Contact Our Team</a>
+        </div>
+    </section>
 
-<!-- SPECIALTIES -->
-<section id="specialties">
-  <div class="reveal">
-    <div class="section-tag">Deep Expertise</div>
-    <h2>Our <span>Specialities</span></h2>
-    <p class="section-desc">Two verticals that set CFI Global apart from conventional financial service providers.</p>
-  </div>
-  <div class="specialty-grid">
-    <div class="specialty-card reveal">
-      <div class="bg-num">01</div>
-      <div class="service-icon" style="margin-bottom:1.25rem;">🌍</div>
-      <h3>NRI Banking Solutions</h3>
-      <p>Empowering the Indian diaspora with seamless access to Indian financial markets, home ownership, and secure remittance channels from anywhere in the world.</p>
-      <ul class="specialty-list">
-        <li>NRE / NRO / FCNR Account Opening</li>
-        <li>NRI Home & Property Loans</li>
-        <li>Foreign Remittance & FEMA Compliance</li>
-        <li>Repatriation & Tax Advisory</li>
-        <li>Investment & Wealth Management</li>
-      </ul>
-    </div>
-    <div class="specialty-card reveal">
-      <div class="bg-num">02</div>
-      <div class="service-icon" style="margin-bottom:1.25rem;">⚙️</div>
-      <h3>IT & Software Development</h3>
-      <p>Building future-ready digital products for businesses — from BFSI portals to full-stack enterprise platforms — with a focus on security, scalability, and UX.</p>
-      <ul class="specialty-list">
-        <li>Custom Web & Mobile Applications</li>
-        <li>Fintech & BFSI Platform Development</li>
-        <li>API Integration & Cloud Deployment</li>
-        <li>CRM & ERP Solutions</li>
-        <li>UI/UX Design & Digital Branding</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-  <!-- ─── CORE TEAM ─── -->
-<section id="team" style="background: var(--navy);">
-  <div class="reveal" style="text-align: center; margin-bottom: 0;">
-    <div class="section-tag">The People Behind CFI Global</div>
-    <h2>Meet Our <span>Core Team</span></h2>
-    <p class="section-desc" style="margin: 0.75rem auto 0; text-align: center;">
-      Seasoned professionals committed to delivering financial excellence and client-first service.
-    </p>
-  </div>
-
-  <div class="team-grid reveal" style="
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3.5rem;
-  ">
-
-    <!-- Member 1 -->
-    <div class="team-card" style="
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    ">
-      <div style="
-        position: absolute; top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      "></div>
-      <div class="team-photo-wrap" style="
-        width: 120px; height: 120px;
-        border-radius: 50%;
-        margin: 0 auto 1.5rem;
-        background: rgba(200,164,90,0.1);
-        border: 2px solid var(--border);
-        overflow: hidden;
-        display: flex; align-items: center; justify-content: center;
-      ">
-      
-        <img src="aakash.jpeg" alt="Mr. Akaash Yadav"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-        <div style="
-          display: none;
-          width: 80%; height: 80%;
-          align-items: center; justify-content: center;
-          font-family: 'Playfair Display', serif;
-          font-size: 2.2rem; font-weight: 700;
-          color: var(--gold);
-        ">AY</div>
-      </div>
-      <h3 style="
-        font-family: 'Playfair Display', serif;
-        font-size: 1.2rem; font-weight: 700;
-        margin-bottom: 0.4rem;
-      ">Mr. Aakash Yadav</h3>
-      <div style="
-        font-size: 0.75rem; color: var(--gold);
-        letter-spacing: 0.16em; text-transform: uppercase;
-        font-weight: 600; margin-bottom: 1rem;
-      ">Chief Executive Officer</div>
-      <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7;">
-        Visionary leader driving CFI Global's mission to make financial services accessible, transparent, and client-first across India and beyond.
-      </p>
-    </div>
-
-    <!-- Member 2 -->
-    <div class="team-card" style="
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    ">
-      <div style="
-        position: absolute; top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      "></div>
-      <div class="team-photo-wrap" style="
-        width: 120px; height: 120px;
-        border-radius: 50%;
-        margin: 0 auto 1.5rem;
-        background: rgba(200,164,90,0.1);
-        border: 2px solid var(--border);
-        overflow: hidden;
-        display: flex; align-items: center; justify-content: center;
-      ">
-      
-        <img src="sargam.jpeg" alt="Ms. Sargam Deo"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-        <div style="
-          display: none;
-          width: 100%; height: 100%;
-          align-items: center; justify-content: center;
-          font-family: 'Playfair Display', serif;
-          font-size: 2.2rem; font-weight: 700;
-          color: var(--gold);
-        ">SD</div>
-      </div>
-      <h3 style="
-        font-family: 'Playfair Display', serif;
-        font-size: 1.2rem; font-weight: 700;
-        margin-bottom: 0.4rem;
-      ">Ms. Sargam Deo</h3>
-      <div style="
-        font-size: 0.75rem; color: var(--gold);
-        letter-spacing: 0.16em; text-transform: uppercase;
-        font-weight: 600; margin-bottom: 1rem;
-      ">Managing Director</div>
-      <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7;">
-        Strategic force behind CFI Global's growth, partnerships, and operational excellence — ensuring every client relationship is built on trust and results.
-      </p>
-    </div>
-
-    <!-- Member 3 -->
-    <div class="team-card" style="
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    ">
-      <div style="
-        position: absolute; top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      "></div>
-      <div class="team-photo-wrap" style="
-        width: 120px; height: 120px;
-        border-radius: 50%;
-        margin: 0 auto 1.5rem;
-        background: rgba(200,164,90,0.1);
-        border: 2px solid var(--border);
-        overflow: hidden;
-        display: flex; align-items: center; justify-content: center;
-      ">
-        <!-- Replace src with actual photo path e.g. src="team/nikita.jpg" -->
-        <img src="Nikita.jpeg" alt="Ms. Nikita Khandelwal"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-        <div style="
-          display: none;
-          width: 100%; height: 100%;
-          align-items: center; justify-content: center;
-          font-family: 'Playfair Display', serif;
-          font-size: 2.2rem; font-weight: 700;
-          color: var(--gold);
-        ">NK</div>
-      </div>
-      <h3 style="
-        font-family: 'Playfair Display', serif;
-        font-size: 1.2rem; font-weight: 700;
-        margin-bottom: 0.4rem;
-      ">Ms. Nikita Khandelwal</h3>
-      <div style="
-        font-size: 0.75rem; color: var(--gold);
-        letter-spacing: 0.16em; text-transform: uppercase;
-        font-weight: 600; margin-bottom: 1rem;
-      ">Human Resources</div>
-      <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.7;">
-        The heart of CFI Global's culture — championing talent, building high-performing teams, and nurturing an environment where people and clients both thrive.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY US -->
-<section id="why-us">
-  <div class="reveal" style="text-align:center; margin-bottom:0;">
-    <div class="section-tag">Why Choose CFI Global</div>
-    <h2>Built on <span>Trust</span>, Driven by Results</h2>
-  </div>
-  <div class="why-grid">
-    <div class="why-card reveal">
-      <div class="why-num">10+</div>
-      <h4>Bank Tie-Ups</h4>
-      <p>Access to multiple lenders ensures competitive rates and higher approval chances.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-num">5</div>
-      <h4>Pan-India Offices</h4>
-      <p>Present in Mohali, Delhi, Patna, Ranchi & Kolkata for personalised local support.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-num">360°</div>
-      <h4>End-to-End Service</h4>
-      <p>One partner for loans, insurance, NRI banking, IT, and customer support.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-num">24/7</div>
-      <h4>Customer Support</h4>
-      <p>Our dedicated team is always available to guide you through every step.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">
-    <div class="logo-badge">CFI</div>
-    <div>
-      <div class="logo-text" style="font-size:0.95rem;">Client First Innovate Pvt Ltd</div>
-      <div class="logo-sub">© 2025 CFI Global. All Rights Reserved.</div>
-    </div>
-  </div>
-  <div class="footer-copy">
-    Registered in India &nbsp;|&nbsp; CIN: SP0069650967 &nbsp;|&nbsp; IRDAI Compliant
-  </div>
-<div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#partners">Partners</a>
-    <a href="#specialties">Specialties</a>
-    <a href="#contact">Contact</a>
-</div>
-</footer>
-
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Form submit handler
-  function handleSubmit(btn) {
-    btn.textContent = '✅ Request Sent!';
-    btn.style.background = 'linear-gradient(135deg,#2ecc71,#27ae60)';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Send Request →';
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 3500);
-  }
-</script>
 </body>
 </html>
->
