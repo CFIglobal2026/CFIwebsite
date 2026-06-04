@@ -231,10 +231,10 @@
   .why-card p { color: var(--text-muted); font-size: 0.82rem; }
 
   /* ─── CONTACT (HIDDEN BY DEFAULT) ─── */
-  #contact {
-    display: none; /* Hidden originally */
-    background: var(--navy-mid);
-  }
+ #contact {
+  display: block;
+  background: var(--navy-mid);
+}
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
   .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
   .contact-info h2 span { color: var(--gold); }
@@ -397,7 +397,9 @@
     <h1>Where <em>Clients</em> Come<br>First. Always.</h1>
     <p class="hero-desc">Client First Innovate Pvt Ltd delivers end-to-end banking, loan, insurance, and IT solutions — backed by partnerships with India's leading banks and insurers across Mohali, Delhi, Patna, Ranchi & Kolkata.</p>
     <div class="hero-btns">
-      <a onclick="openContactSection()" class="btn-primary">Get a Free Consultation</a>
+    <a href="#contact" class="btn-primary">
+  Get a Free Consultation
+</a>
       <a href="#services" class="btn-outline">Explore Services</a>
     </div>
   </div>
@@ -612,7 +614,7 @@
   </div>
   <div class="footer-links">
     <a href="#services">Services</a>
-    <a onclick="openContactSection()">Contact</a>
+<a href="#contact">Contact</a>
   </div>
 </footer>
 
@@ -633,20 +635,7 @@
   reveals.forEach(el => observer.observe(el));
 
   // Function to Unhide & Scroll to Contact Section
-  function openContactSection() {
-    closeMobileMenu(); // Close mobile menu if open
-    
-    const contactSection = document.getElementById('contact');
-    contactSection.style.display = 'block';
-    
-    const contactReveals = contactSection.querySelectorAll('.reveal');
-    contactReveals.forEach(el => el.classList.add('visible'));
-
-    setTimeout(() => {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }, 50);
-  }
-
+ 
   // Form submit handler for Contact
   function handleSubmit(btn) {
     btn.textContent = '✅ Request Sent!';
