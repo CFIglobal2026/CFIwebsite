@@ -224,12 +224,25 @@
   /* ─── WHY US ─── */
   #why-us { background: var(--navy); }
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
-  .why-card { text-align: center; padding: 2rem 1.5rem; border-radius: 16px; border: 1px solid var(--border); background: var(--card-bg); transition: 0.3s; }
-  .why-card:hover { border-color: rgba(200,164,90,0.45); transform: translateY(-4px); }
-  .why-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--gold); margin-bottom: 0.5rem; }
-  .why-card h4 { font-size: 0.95rem; margin-bottom: 0.5rem; }
-  .why-card p { color: var(--text-muted); font-size: 0.82rem; }
+  .why-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    transition: 0.3s;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.why-card p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin-top: 0.6rem;
+}
   /* ─── CONTACT (HIDDEN BY DEFAULT) ─── */
  #contact {
   display: block;
@@ -636,13 +649,59 @@ footer{
   </div>
 
   <div class="why-grid">
-    <div class="why-card reveal"><div class="why-num">10+</div><h4>Bank Tie-Ups</h4></div>
-    <div class="why-card reveal"><div class="why-num">5</div><h4>Pan-India Offices</h4></div>
-    <div class="why-card reveal"><div class="why-num">360°</div><h4>End-to-End Service</h4></div>
-    <div class="why-card reveal"><div class="why-num">24/7</div><h4>Customer Support</h4></div>
+
+    <div class="why-card reveal">
+      <div class="why-num">10+</div>
+      <h4>Bank Tie-Ups</h4>
+      <p>Access to multiple lenders ensures competitive rates and higher approval chances.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">5</div>
+      <h4>Pan-India Offices</h4>
+      <p>Present across major cities for personalized local support.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">360°</div>
+      <h4>End-to-End Service</h4>
+      <p>One partner for loans, insurance, NRI banking, IT, and customer support.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">24/7</div>
+      <h4>Customer Support</h4>
+      <p>Dedicated assistance available whenever you need expert guidance.</p>
+    </div>
+
+    <!-- NEW CARDS -->
+
+    <div class="why-card reveal">
+      <div class="why-num">15K+</div>
+      <h4>Clients Served</h4>
+      <p>Helping individuals, professionals, and businesses achieve their financial goals.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">99%</div>
+      <h4>Client Satisfaction</h4>
+      <p>Committed to delivering exceptional service and long-term customer relationships.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">20+</div>
+      <h4>Financial Partners</h4>
+      <p>Access to leading banks, NBFCs, insurers, and financial institutions.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">12+</div>
+      <h4>Years of Expertise</h4>
+      <p>Providing trusted financial and technology solutions across India.</p>
+    </div>
+
   </div>
 </section>
-
 <!-- TEAM SECTION -->
 <section id="team">
 
