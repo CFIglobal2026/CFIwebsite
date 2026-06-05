@@ -519,19 +519,22 @@ footer{
 /* ─── TEAM SECTION ─── */
 /* ─── TEAM SECTION ─── */
 
+/* ───────────────── TEAM SECTION ───────────────── */
+
 #team{
-    padding:100px 5%;
-    background:var(--navy-mid);
+    background:var(--navy);
 }
 
-.team-header{
-/* ───────────── TEAM SECTION ───────────── */
-/* ───────── LEADERSHIP TEAM ───────── */
+/* Header */
 
 .team-header{
     text-align:center;
     max-width:850px;
-    margin:0 auto 3rem;
+    margin:0 auto 4rem;
+}
+
+.team-header h2{
+    text-align:center;
 }
 
 .team-description{
@@ -540,62 +543,123 @@ footer{
     color:var(--text-muted);
     line-height:1.8;
     font-size:0.95rem;
+    text-align:center;
 }
 
 /* Team Grid */
 
 .team-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
     gap:2rem;
     margin-top:3rem;
+    flex-wrap:nowrap;
 }
 
 /* Team Card */
 
 .team-card{
-    text-align:center;
+    flex:1;
+    max-width:360px;
+
     background:var(--card-bg);
     border:1px solid var(--border);
-    border-radius:20px;
+    border-radius:22px;
+
     padding:2rem;
-    transition:all .35s ease;
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
+    transition:all .45s ease;
+}
+
+/* Shine Effect */
+
+.team-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transition:.9s;
+}
+
+.team-card:hover::before{
+    left:130%;
 }
 
 .team-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-12px);
     border-color:rgba(200,164,90,.45);
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    box-shadow:0 25px 50px rgba(0,0,0,.35);
 }
 
-/* Team Images */
+/* Images */
 
 .team-card img{
-    width:220px;
-    height:220px;
+    width:150px;
+    height:150px;
+
     object-fit:cover;
     border-radius:50%;
+
     display:block;
     margin:0 auto 1.25rem;
-    border:3px solid rgba(200,164,90,.25);
+
+    border:3px solid rgba(200,164,90,.35);
+
+    animation:floatImage 4s ease-in-out infinite;
+
+    transition:.4s ease;
+}
+
+.team-card:hover img{
+    transform:scale(1.08);
+    border-color:var(--gold);
+}
+
+/* Floating Animation */
+
+@keyframes floatImage{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
 }
 
 /* Name */
 
 .team-card h4{
-    margin-bottom:.4rem;
-    font-size:1.2rem;
     color:#fff;
+    font-size:1.2rem;
+    margin-bottom:.5rem;
 }
 
 /* Designation */
 
 .team-role{
     color:var(--gold);
-    font-weight:600;
-    margin-bottom:1rem;
     font-size:.9rem;
-    letter-spacing:.05em;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:1rem;
 }
 
 /* Description */
@@ -608,25 +672,30 @@ footer{
 
 /* Tablet */
 
-@media (max-width: 992px){
+@media(max-width:992px){
 
     .team-grid{
-        grid-template-columns:repeat(2,1fr);
+        flex-wrap:wrap;
+    }
+
+    .team-card{
+        min-width:280px;
     }
 
 }
 
 /* Mobile */
 
-@media (max-width: 768px){
+@media(max-width:768px){
 
     .team-grid{
-        grid-template-columns:1fr;
+        flex-direction:column;
+        align-items:center;
     }
 
-    .team-card img{
-        width:180px;
-        height:180px;
+    .team-card{
+        width:100%;
+        max-width:400px;
     }
 
 }
@@ -798,57 +867,80 @@ footer{
 <section id="team">
 
     <div class="team-header reveal">
-        <div class="section-tag">Leadership Team</div>
 
-        <h2>Meet Our <span>Core Members</span></h2>
+        <div class="section-tag">
+            Leadership Team
+        </div>
+
+        <h2>
+            Meet Our <span>Core Members</span>
+        </h2>
 
         <p class="team-description">
-            Our leadership team brings together expertise, vision, and dedication
-            to deliver exceptional financial and technology solutions while
-            maintaining the highest standards of client service.
+            Our leadership team combines industry expertise, strategic vision,
+            and client-focused values to deliver exceptional financial and
+            technology solutions across India.
         </p>
+
     </div>
 
     <div class="team-grid">
 
+        <!-- Aakash -->
+
         <div class="team-card reveal">
-            <img src="aakash.jpeg" alt="Mr Aakash Yadav">
+
+            <img src="aakash.jpeg" alt="Mr. Aakash Yadav">
 
             <h4>Mr. Aakash Yadav</h4>
 
-            <div class="team-role">Chief Executive Officer (CEO)</div>
+            <div class="team-role">
+                Chief Executive Officer
+            </div>
 
             <p>
-                Leading CFI Global with strategic vision, innovation, and a
-                strong commitment to client success across financial and
-                technology services.
+                Leads CFI Global with a vision for innovation, business growth,
+                and delivering exceptional client experiences.
             </p>
+
         </div>
 
+        <!-- Sargam -->
+
         <div class="team-card reveal">
-            <img src="sargam.jpeg" alt="Ms Sargam Deo">
+
+            <img src="sargam.jpeg" alt="Ms. Sargam Deo">
 
             <h4>Ms. Sargam Deo</h4>
 
-            <div class="team-role">Managing Director</div>
+            <div class="team-role">
+                Managing Director
+            </div>
 
             <p>
-                Driving operational excellence and business growth while ensuring
-                exceptional customer experience and organizational leadership.
+                Drives operational excellence, strategic planning, and
+                organizational growth while maintaining client satisfaction.
             </p>
+
         </div>
 
+        <!-- Nikita -->
+
         <div class="team-card reveal">
-            <img src="Nikita.jpeg" alt="Ms Nikita Khandelwal">
+
+            <img src="Nikita.jpeg" alt="Ms. Nikita Khandelwal">
 
             <h4>Ms. Nikita Khandelwal</h4>
 
-            <div class="team-role">Human Resources</div>
+            <div class="team-role">
+                Human Resources
+            </div>
 
             <p>
-                Building a strong people-first culture by managing talent,
-                employee engagement, and organizational development.
+                Focused on talent development, employee engagement, and
+                building a high-performance professional culture.
             </p>
+
         </div>
 
     </div>
