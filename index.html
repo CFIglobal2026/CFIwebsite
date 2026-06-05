@@ -191,15 +191,197 @@
   .section-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; max-width: 540px; }
 
   /* ─── SERVICES ─── */
-  #services { background: var(--navy-mid); position: relative; overflow: hidden; }
-  .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem; align-items: end; }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-  .service-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: transform 0.3s, border-color 0.3s; position: relative; overflow: hidden; }
-  .service-card:hover { transform: translateY(-6px); border-color: rgba(200,164,90,0.45); }
-  .service-icon { width: 52px; height: 52px; background: rgba(200,164,90,0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; }
-  .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.75rem; font-weight: 600; }
-  .service-card p { color: var(--text-muted); font-size: 0.875rem; line-height: 1.7; }
+ /* ───────── SERVICES SECTION ───────── */
 
+#services{
+    background:var(--navy-mid);
+    position:relative;
+    overflow:hidden;
+}
+
+/* Header */
+
+.services-header{
+    text-align:center;
+    max-width:950px;
+    margin:0 auto 4rem;
+}
+
+.services-header h2{
+    margin-top:1rem;
+    position:relative;
+    display:inline-block;
+}
+
+/* Animated Gold Line */
+
+.services-header h2::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-15px;
+
+    transform:translateX(-50%);
+
+    width:90px;
+    height:3px;
+
+    background:var(--gold);
+    border-radius:20px;
+
+    animation:glowLine 3s infinite;
+}
+
+/* Description */
+
+.services-description{
+    max-width:780px;
+    margin:2rem auto 0;
+
+    color:var(--text-muted);
+    font-size:1rem;
+    line-height:1.9;
+    text-align:center;
+
+    animation:floatText 5s ease-in-out infinite;
+}
+
+/* Services Grid */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.75rem;
+}
+
+/* Service Cards */
+
+.service-card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    padding:2rem;
+    position:relative;
+    overflow:hidden;
+
+    transition:all .4s ease;
+}
+
+/* Shine Effect */
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transition:.8s ease;
+}
+
+.service-card:hover::before{
+    left:130%;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(200,164,90,.45);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+/* Service Icon */
+
+.service-icon{
+    width:60px;
+    height:60px;
+
+    background:rgba(200,164,90,.12);
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:1.7rem;
+    margin-bottom:1.25rem;
+
+    animation:floatIcon 3s ease-in-out infinite;
+}
+
+/* Service Heading */
+
+.service-card h3{
+    font-family:'Playfair Display', serif;
+    font-size:1.2rem;
+    margin-bottom:.9rem;
+    font-weight:600;
+}
+
+/* Service Text */
+
+.service-card p{
+    color:var(--text-muted);
+    font-size:.9rem;
+    line-height:1.8;
+}
+
+/* Animations */
+
+@keyframes glowLine{
+    0%{
+        box-shadow:0 0 0 rgba(200,164,90,0);
+    }
+    50%{
+        box-shadow:0 0 18px rgba(200,164,90,.8);
+    }
+    100%{
+        box-shadow:0 0 0 rgba(200,164,90,0);
+    }
+}
+
+@keyframes floatText{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-4px);
+    }
+}
+
+@keyframes floatIcon{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-6px);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .services-description{
+        font-size:.95rem;
+        line-height:1.8;
+        padding:0 10px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+}
   /* ─── PARTNERS ─── */
   #partners { background: var(--navy); }
   .partners-header { text-align: center; margin-bottom: 3.5rem; }
@@ -877,23 +1059,24 @@ footer{
   </div>
 </section>
 
-<section id="services">
-  <div class="services-header reveal">
-    <div>
-      <div class="section-tag">What We Do</div>
-      <h2>Comprehensive <span>Financial</span><br>& Tech Services</h2>
+<div class="services-header reveal">
+
+    <div class="section-tag">
+        What We Do
     </div>
-    <p class="section-desc">From home loans to life cover, NRI banking to enterprise software — CFI Global is your single-window solution for financial empowerment and digital growth.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal"><div class="service-icon">🏦</div><h3>Banking Loans</h3><p>Home loans, personal loans, business loans, and more — facilitated through our multi-bank tie-ups for the fastest approvals and best rates.</p></div>
-    <div class="service-card reveal"><div class="service-icon">🛡️</div><h3>Insurance Solutions</h3><p>Life, health, motor, and general insurance from India's top providers. We compare, advise, and secure the right coverage for every need.</p></div>
-    <div class="service-card reveal"><div class="service-icon">🤝</div><h3>Customer Support</h3><p>Dedicated relationship managers and end-to-end customer service — from application to disbursement and beyond.</p></div>
-    <div class="service-card reveal"><div class="service-icon">🌐</div><h3>NRI Banking Solutions</h3><p>Specialised NRI accounts, remittances, investments, and property loans — expert guidance for the Indian diaspora worldwide.</p></div>
-    <div class="service-card reveal"><div class="service-icon">💻</div><h3>IT & Software Development</h3><p>Custom web & mobile applications, enterprise software, and digital transformation solutions tailored for the BFSI sector and beyond.</p></div>
-    <div class="service-card reveal"><div class="service-icon">📊</div><h3>Financial Planning</h3><p>Goal-based advisory on investment, tax planning, retirement, and wealth management through our certified experts.</p></div>
-  </div>
-</section>
+
+    <h2>
+        Comprehensive <span>Financial</span><br>
+        & Tech Services
+    </h2>
+
+    <p class="services-description">
+        From home loans to life cover, NRI banking to enterprise software —
+        CFI Global is your single-window solution for financial empowerment,
+        digital growth, and long-term business success.
+    </p>
+
+</div>
 
 <section id="partners">
   <div class="partners-header reveal">
