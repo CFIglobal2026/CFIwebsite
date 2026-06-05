@@ -526,29 +526,27 @@ footer{
 
 .team-header{
 /* ───────────── TEAM SECTION ───────────── */
+/* ───────── LEADERSHIP TEAM ───────── */
 
 .team-header{
     text-align:center;
-    max-width:800px;
+    max-width:850px;
     margin:0 auto 3rem;
 }
 
 .team-description{
-    margin-top:1rem;
-    max-width:650px;
-    margin-left:auto;
-    margin-right:auto;
-
+    max-width:700px;
+    margin:1rem auto 0;
     color:var(--text-muted);
-    font-size:0.95rem;
     line-height:1.8;
+    font-size:0.95rem;
 }
 
 /* Team Grid */
 
 .team-grid{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:2rem;
     margin-top:3rem;
 }
@@ -559,45 +557,58 @@ footer{
     text-align:center;
     background:var(--card-bg);
     border:1px solid var(--border);
-    border-radius:18px;
-    padding:1.5rem;
+    border-radius:20px;
+    padding:2rem;
     transition:all .35s ease;
 }
 
 .team-card:hover{
     transform:translateY(-8px);
-    border-color:rgba(200,164,90,.5);
+    border-color:rgba(200,164,90,.45);
     box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
-/* Team Image */
+/* Team Images */
 
 .team-card img{
-    width:180px;
-    height:180px;
+    width:220px;
+    height:220px;
     object-fit:cover;
     border-radius:50%;
-    margin-bottom:1rem;
+    display:block;
+    margin:0 auto 1.25rem;
+    border:3px solid rgba(200,164,90,.25);
 }
 
 /* Name */
 
 .team-card h4{
     margin-bottom:.4rem;
-    font-size:1.1rem;
+    font-size:1.2rem;
     color:#fff;
 }
 
 /* Designation */
 
+.team-role{
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:1rem;
+    font-size:.9rem;
+    letter-spacing:.05em;
+}
+
+/* Description */
+
 .team-card p{
     color:var(--text-muted);
+    line-height:1.8;
     font-size:.9rem;
 }
 
 /* Tablet */
 
-@media(max-width:992px){
+@media (max-width: 992px){
 
     .team-grid{
         grid-template-columns:repeat(2,1fr);
@@ -607,15 +618,15 @@ footer{
 
 /* Mobile */
 
-@media(max-width:600px){
+@media (max-width: 768px){
 
     .team-grid{
         grid-template-columns:1fr;
     }
 
     .team-card img{
-        width:150px;
-        height:150px;
+        width:180px;
+        height:180px;
     }
 
 }
@@ -792,36 +803,52 @@ footer{
         <h2>Meet Our <span>Core Members</span></h2>
 
         <p class="team-description">
-            Our experienced professionals bring together expertise in banking,
-            finance, insurance, and technology to deliver reliable solutions
-            and exceptional service for every client.
+            Our leadership team brings together expertise, vision, and dedication
+            to deliver exceptional financial and technology solutions while
+            maintaining the highest standards of client service.
         </p>
     </div>
 
     <div class="team-grid">
 
         <div class="team-card reveal">
-            <img src="member1.jpg" alt="Team Member">
-            <h4>Member Name</h4>
-            <p>Designation</p>
+            <img src="aakash.jpeg" alt="Mr Aakash Yadav">
+
+            <h4>Mr. Aakash Yadav</h4>
+
+            <div class="team-role">Chief Executive Officer (CEO)</div>
+
+            <p>
+                Leading CFI Global with strategic vision, innovation, and a
+                strong commitment to client success across financial and
+                technology services.
+            </p>
         </div>
 
         <div class="team-card reveal">
-            <img src="member2.jpg" alt="Team Member">
-            <h4>Member Name</h4>
-            <p>Designation</p>
+            <img src="sargam.jpeg" alt="Ms Sargam Deo">
+
+            <h4>Ms. Sargam Deo</h4>
+
+            <div class="team-role">Managing Director</div>
+
+            <p>
+                Driving operational excellence and business growth while ensuring
+                exceptional customer experience and organizational leadership.
+            </p>
         </div>
 
         <div class="team-card reveal">
-            <img src="member3.jpg" alt="Team Member">
-            <h4>Member Name</h4>
-            <p>Designation</p>
-        </div>
+            <img src="Nikita.jpeg" alt="Ms Nikita Khandelwal">
 
-        <div class="team-card reveal">
-            <img src="member4.jpg" alt="Team Member">
-            <h4>Member Name</h4>
-            <p>Designation</p>
+            <h4>Ms. Nikita Khandelwal</h4>
+
+            <div class="team-role">Human Resources</div>
+
+            <p>
+                Building a strong people-first culture by managing talent,
+                employee engagement, and organizational development.
+            </p>
         </div>
 
     </div>
