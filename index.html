@@ -221,20 +221,103 @@
   .specialty-list li { font-size: 0.875rem; color: #b0bfd4; display: flex; align-items: center; gap: 8px; }
   .specialty-list li::before { content: '▸'; color: var(--gold); }
 
-  /* ─── WHY US ─── */
-  #why-us { background: var(--navy); }
-  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
-  .why-card {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    transition: 0.3s;
-    min-height: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+ /* ───────────────── WHY US ───────────────── */
+
+#why-us{
+    background: var(--navy);
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:2rem;
+    margin-top:3.5rem;
+}
+
+.why-card{
+    position:relative;
+    overflow:hidden;
+
+    text-align:center;
+    padding:2.5rem 2rem;
+    min-height:260px;
+
+    border-radius:18px;
+    border:1px solid var(--border);
+    background:var(--card-bg);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    transition:all .4s ease;
+}
+
+.why-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+    transition:.9s ease;
+}
+
+.why-card:hover::before{
+    left:130%;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(200,164,90,.5);
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.why-num{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    font-weight:900;
+    color:var(--gold);
+    margin-bottom:1rem;
+    line-height:1;
+    animation:floatNumber 4s ease-in-out infinite;
+}
+
+@keyframes floatNumber{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+}
+
+.why-card h4{
+    font-size:1.1rem;
+    margin-bottom:.8rem;
+    color:#fff;
+}
+
+.why-card p{
+    color:var(--text-muted);
+    font-size:.9rem;
+    line-height:1.8;
+    max-width:240px;
+    margin:0 auto;
+}
+
+@media(max-width:768px){
+    .why-card{
+        min-height:220px;
+        padding:2rem 1.5rem;
+    }
+
+    .why-num{
+        font-size:2.5rem;
+    }
 }
 
 .why-card p {
@@ -643,7 +726,8 @@ footer{
 </section>
 
 <section id="why-us">
-  <div class="reveal" style="text-align:center;">
+
+  <div class="reveal section-center">
     <div class="section-tag">Why Choose CFI Global</div>
     <h2>Built on <span>Trust</span>, Driven by Results</h2>
   </div>
@@ -653,28 +737,41 @@ footer{
     <div class="why-card reveal">
       <div class="why-num">10+</div>
       <h4>Bank Tie-Ups</h4>
-      <p>Strong partnerships with leading banks to offer better loan options and faster approvals.</p>
+      <p>
+        Strategic partnerships with leading banks to provide competitive
+        financial solutions and faster approvals.
+      </p>
     </div>
 
     <div class="why-card reveal">
       <div class="why-num">5</div>
       <h4>Pan-India Offices</h4>
-      <p>Serving clients across multiple locations with personalized support and local expertise.</p>
+      <p>
+        Serving clients across India with localized support and professional
+        guidance at every step.
+      </p>
     </div>
 
     <div class="why-card reveal">
       <div class="why-num">360°</div>
       <h4>End-to-End Service</h4>
-      <p>Comprehensive solutions covering loans, insurance, NRI banking, IT services, and more.</p>
+      <p>
+        Comprehensive solutions covering loans, insurance, NRI banking,
+        IT services, and business support.
+      </p>
     </div>
 
     <div class="why-card reveal">
       <div class="why-num">24/7</div>
       <h4>Customer Support</h4>
-      <p>Dedicated professionals available to assist you at every stage of your journey.</p>
+      <p>
+        Dedicated professionals available whenever you need assistance,
+        consultation, or expert advice.
+      </p>
     </div>
 
   </div>
+
 </section>
 <!-- TEAM SECTION -->
 <section id="team">
