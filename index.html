@@ -210,16 +210,146 @@
   .partner-chip:hover { border-color: rgba(200,164,90,0.5); background: rgba(200,164,90,0.08); color: var(--gold-light); }
 
   /* ─── SPECIALTIES ─── */
-  #specialties { background: var(--navy-mid); }
-  .specialty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
-  .specialty-card { background: rgba(10,22,40,0.7); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; transition: 0.3s; }
-  .specialty-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
-  .specialty-card .bg-num { position: absolute; right: 1.5rem; top: 1rem; font-family: 'Playfair Display', serif; font-size: 6rem; font-weight: 900; color: rgba(200,164,90,0.05); }
-  .specialty-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; }
-  .specialty-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.75; }
-  .specialty-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .specialty-list li { font-size: 0.875rem; color: #b0bfd4; display: flex; align-items: center; gap: 8px; }
-  .specialty-list li::before { content: '▸'; color: var(--gold); }
+ /* ───────── SPECIALTIES ───────── */
+
+#specialties{
+    background:var(--navy-mid);
+}
+
+.specialty-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    margin-top:3.5rem;
+}
+
+.specialty-card{
+    background:rgba(10,22,40,0.75);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:2.5rem;
+    position:relative;
+    overflow:hidden;
+    transition:all .4s ease;
+}
+
+.specialty-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(200,164,90,.4);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+/* Shine Effect */
+
+.specialty-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transition:.8s ease;
+}
+
+.specialty-card:hover::before{
+    left:130%;
+}
+
+/* Background Number */
+
+.specialty-card .bg-num{
+    position:absolute;
+    right:1.5rem;
+    top:1rem;
+
+    font-family:'Playfair Display', serif;
+    font-size:6rem;
+    font-weight:900;
+
+    color:rgba(200,164,90,.05);
+}
+
+/* Icon */
+
+.specialty-icon{
+    font-size:2.8rem;
+    margin-bottom:1rem;
+    display:inline-block;
+    animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+/* Heading */
+
+.specialty-card h3{
+    font-family:'Playfair Display', serif;
+    font-size:1.4rem;
+    margin-bottom:1rem;
+}
+
+/* Description */
+
+.specialty-card p{
+    color:var(--text-muted);
+    font-size:.9rem;
+    margin-bottom:1.5rem;
+    line-height:1.75;
+}
+
+/* List */
+
+.specialty-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+}
+
+.specialty-list li{
+    font-size:.9rem;
+    color:#b0bfd4;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.3s ease;
+}
+
+.specialty-list li::before{
+    content:'▸';
+    color:var(--gold);
+    font-weight:700;
+}
+
+.specialty-list li:hover{
+    color:#fff;
+    transform:translateX(6px);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .specialty-grid{
+        grid-template-columns:1fr;
+    }
+
+}
 
  /* ───────────────── WHY US ───────────────── */
 
@@ -792,26 +922,47 @@ footer{
     <h2>Our <span>Specialities</span></h2>
   </div>
   <div class="specialty-grid">
-    <div class="specialty-card reveal">
-      <div class="bg-num">01</div>
-      <h3>NRI Banking Solutions</h3>
-      <p>Empowering the Indian diaspora with seamless access to Indian financial markets.</p>
-      <ul class="specialty-list">
-        <li>NRE / NRO / FCNR Account Opening</li>
-        <li>NRI Home & Property Loans</li>
-        <li>Foreign Remittance & FEMA Compliance</li>
-      </ul>
+   <!-- NRI Banking Solutions -->
+
+<div class="specialty-card reveal">
+
+    <div class="specialty-icon">
+        🌍
     </div>
-    <div class="specialty-card reveal">
-      <div class="bg-num">02</div>
-      <h3>IT & Software Development</h3>
-      <p>Building future-ready digital products for businesses — from BFSI portals to full-stack platforms.</p>
-      <ul class="specialty-list">
-        <li>Custom Web & Mobile Applications</li>
-        <li>Fintech & BFSI Platform Development</li>
-        <li>API Integration & Cloud Deployment</li>
-      </ul>
+
+    <h3>NRI Banking Solutions</h3>
+
+    <ul class="specialty-list">
+        <li>NRE & NRO Account Assistance</li>
+        <li>Home & Investment Advisory</li>
+        <li>Repatriation & Fund Transfer Support</li>
+        <li>Tax & Compliance Guidance</li>
+        <li>Wealth Management Solutions</li>
+        <li>Dedicated Relationship Support</li>
+    </ul>
+
+</div>
+
+<!-- IT & Software Development -->
+
+<div class="specialty-card reveal">
+
+    <div class="specialty-icon">
+        💻
     </div>
+
+    <h3>IT & Software Development</h3>
+
+    <ul class="specialty-list">
+        <li>Website Design & Development</li>
+        <li>Mobile App Development</li>
+        <li>Custom Software Solutions</li>
+        <li>UI / UX Design Services</li>
+        <li>Cloud & Digital Transformation</li>
+        <li>Technical Support & Maintenance</li>
+    </ul>
+
+</div>
   </div>
 </section>
 
