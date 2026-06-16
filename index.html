@@ -27,32 +27,98 @@
     color: var(--white);
     overflow-x: hidden;
   }
+  /* ─── NAVBAR ─── */
 
- <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
 
-    <li class="dropdown">
-        <a href="#">Our Products ▾</a>
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        <ul class="dropdown-menu">
-            <li>
-                <a href="career-accelerator.html">
-                    Career Accelerator
-                </a>
-            </li>
-        </ul>
-    </li>
+    padding:0 5%;
 
-    <li><a href="#partners">Partners</a></li>
-    <li><a href="#specialties">Specialties</a></li>
-    <li><a href="#why-us">Why Us</a></li>
+    background:rgba(10,22,40,.95);
+    backdrop-filter:blur(14px);
 
-    <li>
-        <a href="https://cfiglobal.peopleapps.in/" target="_blank" class="nav-cta">
-            Log In
-        </a>
-    </li>
-</ul>
+    border-bottom:1px solid var(--border);
+
+    z-index:1000;
+}
+
+.nav-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+.logo-text{
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem;
+    font-weight:700;
+    line-height:1.2;
+}
+
+.logo-sub{
+    font-size:.62rem;
+    color:var(--gold);
+    letter-spacing:.15em;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+    list-style:none;
+}
+
+.nav-links a{
+    color:var(--text-muted);
+    text-decoration:none;
+    font-size:.9rem;
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-cta{
+    background:linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold-light)
+    );
+
+    color:var(--navy)!important;
+
+    padding:.7rem 1.3rem;
+
+    border-radius:8px;
+
+    font-weight:700;
+}
+
+.mobile-actions{
+    display:none;
+}
+
+.menu-toggle{
+    display:none;
+}
+
+
   .dropdown{
     position:relative;
 }
@@ -963,9 +1029,6 @@ footer{
 </style>
 </head>
 <body>
-</head>
-<body>
-
 <nav>
   <div class="nav-logo">
    <img src="logo.jpeg" alt="CFI Logo" class="logo-img">
@@ -1256,7 +1319,7 @@ footer{
 
 
 
-<footer>
+
 
   <div class="footer-brand">
     <img src="logo.jpeg" class="logo-img" alt="CFI Logo">
@@ -1285,47 +1348,40 @@ footer{
   </div>
 
 </footer>
+  <script>
+const menuBtn = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-<script>
-  // Mobile Hamburger Menu Logic
-  
-
-  // Scroll reveal logic
- <script>
-  // Mobile Hamburger Menu Logic
-
-  const menuBtn = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  if(menuBtn){
-      menuBtn.addEventListener("click", function(){
-          navLinks.classList.toggle("active");
-      });
-  }
-
-  // Scroll reveal logic
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
+if(menuBtn){
+    menuBtn.addEventListener("click", function(){
+        navLinks.classList.toggle("active");
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
+}
 
-  // Function to Unhide & Scroll to Contact Section
+// Scroll reveal logic
+const reveals = document.querySelectorAll('.reveal');
 
-  // Form submit handler for Contact
-  function handleSubmit(btn) {
-    btn.textContent = '✅ Request Sent!';
-    btn.style.background = 'linear-gradient(135deg,#2ecc71,#27ae60)';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Send Request →';
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 3500);
-  }
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => observer.observe(el));
+
+function handleSubmit(btn) {
+  btn.textContent = '✅ Request Sent!';
+  btn.style.background = 'linear-gradient(135deg,#2ecc71,#27ae60)';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.textContent = 'Send Request →';
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3500);
+}
 </script>
+
