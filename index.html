@@ -28,71 +28,75 @@
     overflow-x: hidden;
   }
 
-  /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    padding: 0 5%;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 72px;
-    background: rgba(10,22,40,0.95);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-  }
+ <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
 
-  .nav-logo { display: flex; align-items: center; gap: 12px; }
+    <li class="dropdown">
+        <a href="#">Our Products ▾</a>
 
-  .logo-badge {
-    width: 42px; height: 42px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 18px;
-    color: var(--navy);
-  }
+        <ul class="dropdown-menu">
+            <li>
+                <a href="career-accelerator.html">
+                    Career Accelerator
+                </a>
+            </li>
+        </ul>
+    </li>
 
-  .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#why-us">Why Us</a></li>
 
-.logo-sub {
-  font-size: 0.62rem;
-  color: var(--gold);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 500;
+    <li>
+        <a href="https://cfiglobal.peopleapps.in/" target="_blank" class="nav-cta">
+            Log In
+        </a>
+    </li>
+</ul>
+  .dropdown{
+    position:relative;
 }
 
-.logo-img {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:220px;
+
+    background:rgba(10,22,40,0.98);
+    border:1px solid var(--border);
+    border-radius:12px;
+
+    list-style:none;
+    padding:10px 0;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+
+    transition:.3s ease;
 }
 
-  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
 
-  .nav-links a {
-    text-decoration: none; color: var(--text-muted);
-    font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em;
-    transition: color 0.25s; cursor: pointer;
-  }
-  .nav-links a:hover { color: var(--gold); }
+.dropdown-menu li{
+    width:100%;
+}
 
-  .nav-cta {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy) !important;
-    padding: 0.6rem 1.4rem;
-    border-radius: 6px;
-    font-weight: 700 !important;
-    transition: transform 0.2s !important;
-    text-align: center;
-  }
-  .nav-cta:hover { transform: translateY(-2px); }
+.dropdown-menu a{
+    display:block;
+    padding:12px 20px;
+    color:var(--white);
+}
 
+.dropdown-menu a:hover{
+    background:rgba(200,164,90,.1);
+    color:var(--gold);
+}
   /* Mobile Hamburger Icon */
   .hamburger {
     display: none;
@@ -954,10 +958,20 @@ footer{
 
 <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+
+    <li>
+        <a href="career-accelerator.html">Our Products</a>
+    </li>
+
     <li><a href="#partners">Partners</a></li>
     <li><a href="#specialties">Specialties</a></li>
     <li><a href="#why-us">Why Us</a></li>
-    <li><a href="https://cfiglobal.peopleapps.in/" target="_blank" class="nav-cta">Log In</a></li>
+
+    <li>
+        <a href="https://cfiglobal.peopleapps.in/" target="_blank" class="nav-cta">
+            Log In
+        </a>
+    </li>
 </ul>
 </nav>
 
