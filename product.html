@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Product | CFI Global</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght=400;500;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --gold: #c8a45a;
+    --gold-light: #e8c97a;
+    --white: #ffffff;
+    --text-muted: #8a9ab8;
+    --border: rgba(200,164,90,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Simple Back Header */
+  header {
+    padding: 20px 5%;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,22,40,.95);
+  }
+  .back-btn {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .back-btn:hover { color: var(--gold-light); }
+
+  /* Content Styling */
+  .product-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  
+  .section-tag {
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  h1 span { color: var(--gold); }
+
+  .poster-box {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+    margin-bottom: 25px;
+  }
+  .poster-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .qr-box {
+    background: #ffffff;
+    padding: 12px;
+    display: inline-block;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+  .qr-box img {
+    width: 130px;
+    height: 130px;
+    display: block;
+  }
+  .qr-box p {
+    color: #0a1628;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .apply-btn {
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    color: #070f18;
+    text-decoration: none;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    transition: 0.3s ease;
+  }
+  .apply-btn:hover {
+    background: linear-gradient(90deg, #ffffff, #e5e5e5);
+    transform: scale(1.02);
+  }
+
+  footer {
+    background: #060f1e;
+    border-top: 1px solid var(--border);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </header>
+
+  <main class="product-container">
+    <div class="section-tag">Our Flagship Program</div>
+    <h1>CFI <span>Accelerator Program</span></h1>
+    
+    <div class="poster-box">
+        <img src="career.jpeg" alt="CFI Accelerator Program Poster">
+    </div>
+
+    <div class="qr-box">
+        <img src="CFI_Google_Form_QR.png" alt="Scan to open Google Form">
+        <p>SCAN TO APPLY</p>
+    </div>
+    
+    <div>
+        <a href="https://forms.gle/AwpDKxpsGP8NS2cQ7" target="_blank" class="apply-btn">
+            Apply via Google Form
+        </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 CFI Global. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
