@@ -416,6 +416,96 @@
 
   .map-section { margin-top: 4rem; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); }
   .map-section iframe { width: 100%; height: 450px; border: none; display: block; }
+  /* ─── VISION & MISSION ─── */
+
+#vision-mission{
+  background: linear-gradient(180deg,#0a1628,#112240);
+  padding:120px 5%;
+}
+
+.vision-header{
+  text-align:center;
+  max-width:900px;
+  margin:0 auto 70px;
+}
+
+.vision-intro{
+  color:var(--text-muted);
+  max-width:750px;
+  margin:20px auto 0;
+  line-height:1.9;
+  font-size:1rem;
+}
+
+.vision-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:35px;
+}
+
+.vision-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:45px 35px;
+  transition:.4s ease;
+  backdrop-filter:blur(10px);
+}
+
+.vision-card:hover{
+  transform:translateY(-12px);
+  border-color:rgba(200,164,90,.5);
+  box-shadow:0 25px 50px rgba(0,0,0,.35);
+}
+
+.vision-icon{
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.vision-card h3{
+  color:var(--gold);
+  margin-bottom:20px;
+  font-family:'Playfair Display',serif;
+}
+
+.vision-card p,
+.vision-card li{
+  color:#b0bfd4;
+  line-height:1.9;
+}
+
+.vision-card ul{
+  padding-left:20px;
+}
+
+.tagline-card{
+  margin-top:60px;
+  text-align:center;
+  padding:50px 30px;
+  border-radius:30px;
+  background:rgba(200,164,90,.08);
+  border:1px solid rgba(200,164,90,.25);
+}
+
+.tagline-icon{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.tagline-card h3{
+  color:var(--gold);
+  margin-bottom:15px;
+}
+
+.tagline-card p{
+  font-size:2rem;
+  color:#fff;
+  font-family:'Playfair Display',serif;
+}
+
+/* ─── FOOTER ─── */
+footer {
 
   /* ─── FOOTER ─── */
   footer { background: #060f1e; border-top: 1px solid var(--border); padding: 3rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
@@ -559,51 +649,8 @@
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">City Offices</div></div>
   </div>
 </section>
-  <section id="vision-mission">
-  <div class="reveal">
-    <div class="section-tag">Our Foundation</div>
-    <h2>Vision, <span>Mission</span> & Core Values</h2>
-  </div>
+ 
 
-  <div class="vm-container">
-
-    <div class="vm-card reveal">
-      <h3>Vision</h3>
-      <p>
-        To become India's most trusted and innovative financial and technology solutions company by empowering individuals, businesses, and communities through customer-centric services, digital transformation, and sustainable growth.
-      </p>
-    </div>
-
-    <div class="vm-card reveal">
-      <h3>Mission</h3>
-      <ul>
-        <li>To deliver exceptional banking, insurance, loan, and technology solutions that create long-term value for our clients.</li>
-        <li>To build a culture of innovation, integrity, and excellence while maintaining a client-first approach in every interaction.</li>
-        <li>To empower young professionals through skill development, practical training, and career opportunities.</li>
-        <li>To leverage technology and strategic partnerships to provide seamless, accessible, and efficient services across India.</li>
-        <li>To contribute towards financial inclusion and economic growth by making quality financial and digital services available to everyone.</li>
-      </ul>
-    </div>
-
-    <div class="vm-card reveal">
-      <h3>Core Values</h3>
-      <ul>
-        <li>✔ Client First Approach</li>
-        <li>✔ Innovation & Excellence</li>
-        <li>✔ Integrity & Transparency</li>
-        <li>✔ Teamwork & Collaboration</li>
-        <li>✔ Continuous Learning</li>
-        <li>✔ Customer Satisfaction</li>
-      </ul>
-
-      <div class="tagline">
-        <strong>Tagline:</strong><br>
-        "Client First, Innovate Always."
-      </div>
-    </div>
-
-  </div>
-</section>
  
 
 
@@ -746,6 +793,60 @@
             <div class="team-role">Business Development Head</div>
             <p>A results-driven professional with 4+ years of experience in business development, client acquisition, and strategic partnerships. Dedicated to driving revenue growth and expanding business opportunities.</p>
         </div>
+</section>
+  <section id="vision-mission">
+
+  <div class="vision-header reveal">
+    <div class="section-tag">Our Foundation</div>
+    <h2>Vision, Mission & <span>Core Values</span></h2>
+    <p class="vision-intro">
+      At CFI Global, our purpose is driven by innovation, trust, and a commitment to creating meaningful impact for clients, professionals, and communities across India.
+    </p>
+  </div>
+
+  <div class="vision-grid">
+
+    <div class="vision-card reveal">
+      <div class="vision-icon">🎯</div>
+      <h3>Our Vision</h3>
+      <p>
+        To become India's most trusted and innovative financial and technology solutions company by empowering individuals, businesses, and communities through customer-centric services, digital transformation, and sustainable growth.
+      </p>
+    </div>
+
+    <div class="vision-card reveal">
+      <div class="vision-icon">🚀</div>
+      <h3>Our Mission</h3>
+      <ul>
+        <li>Deliver exceptional banking, insurance, loan, and technology solutions that create long-term value for our clients.</li>
+        <li>Build a culture of innovation, integrity, and excellence while maintaining a client-first approach.</li>
+        <li>Empower young professionals through skill development, practical training, and career opportunities.</li>
+        <li>Leverage technology and strategic partnerships to provide seamless and efficient services.</li>
+        <li>Promote financial inclusion and contribute towards economic growth across India.</li>
+      </ul>
+    </div>
+
+    <div class="vision-card reveal">
+      <div class="vision-icon">⭐</div>
+      <h3>Core Values</h3>
+      <ul>
+        <li>✔ Client First Approach</li>
+        <li>✔ Innovation & Excellence</li>
+        <li>✔ Integrity & Transparency</li>
+        <li>✔ Teamwork & Collaboration</li>
+        <li>✔ Continuous Learning</li>
+        <li>✔ Customer Satisfaction</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="tagline-card reveal">
+    <div class="tagline-icon">💡</div>
+    <h3>Our Tagline</h3>
+    <p>"Client First, Innovate Always."</p>
+  </div>
+
 </section>
 
 <footer>
