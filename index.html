@@ -552,31 +552,132 @@ footer {
     .specialty-grid, .contact-grid, .form-row { grid-template-columns: 1fr; }
   }
 
-  /* ───────────────── TEAM SECTION ───────────────── */
-  #team { background: var(--navy); }
-  .team-header { text-align: center; max-width: 850px; margin: 0 auto 4rem; }
-  .team-description { max-width: 700px; margin: 1rem auto 0; color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; text-align: center; }
-  .team-grid { display: flex; justify-content: center; align-items: stretch; gap: 2rem; margin-top: 3rem; flex-wrap: nowrap; }
-  
-  .team-card { flex: 1; max-width: 360px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 22px; padding: 2rem; text-align: center; position: relative; overflow: hidden; transition: all .45s ease; }
-  .team-card::before {
-    content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent); transition: .9s;
+/* ───────────────── TEAM SECTION ───────────────── */
+
+#team{
+  background:var(--navy);
+  padding:120px 5%;
+}
+
+.team-header{
+  text-align:center;
+  max-width:900px;
+  margin:0 auto 5rem;
+}
+
+.team-description{
+  max-width:750px;
+  margin:1rem auto 0;
+  color:var(--text-muted);
+  line-height:1.9;
+  font-size:1rem;
+  text-align:center;
+}
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2.5rem;
+  margin-top:3rem;
+}
+
+.team-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  transition:all .45s ease;
+}
+
+.team-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+  );
+  transition:.9s;
+}
+
+.team-card:hover::before{
+  left:130%;
+}
+
+.team-card:hover{
+  transform:translateY(-12px);
+  border-color:rgba(200,164,90,.45);
+  box-shadow:0 25px 50px rgba(0,0,0,.35);
+}
+
+.team-card img{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+  margin:0 auto 1.5rem;
+  border:4px solid rgba(200,164,90,.35);
+  transition:.4s ease;
+}
+
+.team-card:hover img{
+  transform:scale(1.08);
+  border-color:var(--gold);
+}
+
+.team-card h4{
+  color:#fff;
+  font-size:1.25rem;
+  margin-bottom:.5rem;
+  font-weight:600;
+}
+
+.team-role{
+  color:var(--gold);
+  font-size:.9rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:1rem;
+}
+
+.team-card p{
+  color:var(--text-muted);
+  line-height:1.8;
+  font-size:.92rem;
+}
+
+@media(max-width:992px){
+  .team-grid{
+    grid-template-columns:repeat(2,1fr);
   }
-  .team-card:hover::before { left: 130%; }
-  .team-card:hover { transform: translateY(-12px); border-color: rgba(200,164,90,.45); box-shadow: 0 25px 50px rgba(0,0,0,.35); }
-  
-  .team-card img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto 1.25rem; border: 3px solid rgba(200,164,90,.35); animation: floatImage 4s ease-in-out infinite; transition: .4s ease; }
-  .team-card:hover img { transform: scale(1.08); border-color: var(--gold); }
-  @keyframes floatImage { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+}
 
-  .team-card h4 { color: #fff; font-size: 1.2rem; margin-bottom: .5rem; }
-  .team-role { color: var(--gold); font-size: .9rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; }
-  .team-card p { color: var(--text-muted); line-height: 1.8; font-size: .9rem; }
+@media(max-width:768px){
+  .team-grid{
+    grid-template-columns:1fr;
+  }
 
-  @media(max-width:992px) { .team-grid { flex-wrap: wrap; } .team-card { min-width: 280px; } }
-  @media(max-width:768px) { .team-grid { flex-direction: column; align-items: center; } .team-card { width: 100%; max-width: 400px; } }
-</style>
+  .team-card{
+    max-width:420px;
+    margin:auto;
+  }
+
+  .team-card img{
+    width:140px;
+    height:140px;
+  }
+}
+  </style>
 </head>
 <body>
 <div id="welcome-overlay" class="welcome-overlay">
