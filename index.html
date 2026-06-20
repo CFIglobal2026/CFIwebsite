@@ -862,38 +862,145 @@ footer {
         <h2>Meet Our <span>Core Members</span></h2>
         <p class="team-description">Our leadership team combines industry expertise, strategic vision, and client-focused values to deliver exceptional financial and technology solutions across India.</p>
     </div>
-    <div class="team-grid">
-        <div class="team-card reveal">
-            <img src="aakash.jpeg" alt="Mr. Aakash Yadav">
+
+    <div class="new-team-grid">
+        
+        <div class="new-team-card reveal">
+            <div class="avatar-wrapper">
+                <img src="aakash.jpeg" alt="Mr. Aakash Yadav">
+            </div>
             <h4>Mr. Aakash Yadav</h4>
             <div class="team-role">Chief Executive Officer</div>
             <p>Leads CFI Global with a vision for innovation, business growth, and delivering exceptional client experiences.</p>
         </div>
-        <div class="team-card reveal">
-            <img src="sargam.jpeg" alt="Ms. Sargam Deo">
+
+        <div class="new-team-card reveal">
+            <div class="avatar-wrapper">
+                <img src="sargam.jpeg" alt="Ms. Sargam Deo">
+            </div>
             <h4>Ms. Sargam Deo</h4>
             <div class="team-role">Managing Director</div>
             <p>Drives operational excellence, strategic planning, and organizational growth while maintaining client satisfaction.</p>
         </div>
-        <div class="team-card reveal">
-            <img src="Nikita.jpeg" alt="Ms. Nikita Khandelwal">
+
+        <div class="new-team-card reveal">
+            <div class="avatar-wrapper">
+                <img src="Nikita.jpeg" alt="Ms. Nikita Khandelwal">
+            </div>
             <h4>Ms. Nikita Khandelwal</h4>
             <div class="team-role">Human Resources</div>
             <p>Focused on talent development, employee engagement, and building a high-performance professional culture.</p>
         </div>
-        <div class="team-card reveal">
-            <img src="nishant.jpeg" alt="Mr. Nishant Dixit">
+
+        <div class="new-team-card reveal">
+            <div class="avatar-wrapper">
+                <img src="nishant.jpeg" alt="Mr. Nishant Dixit">
+            </div>
             <h4>Mr. Nishant Dixit</h4>
             <div class="team-role">Sales Manager</div>
             <p>Drives revenue growth and market expansion at CFI Global through strategic client acquisition and high-impact sales initiatives.</p>
         </div>
-    </div>
-  <div class="team-card reveal">
-            <img src="nilesh.jpeg" alt="Mr. Nilesh Kumar">
+
+        <div class="new-team-card reveal">
+            <div class="avatar-wrapper">
+                <img src="nilesh.jpeg" alt="Mr. Nilesh Kumar">
+            </div>
             <h4>Mr. Nilesh Kumar</h4>
             <div class="team-role">Business Development Head</div>
-            <p>A results-driven professional with 4+ years of experience in business development, client acquisition, and strategic partnerships. Dedicated to driving revenue growth and expanding business opportunities.</p>
+            <p>A results-driven professional with 4+ years of experience in business development, client acquisition, and strategic partnerships.</p>
         </div>
+
+    </div>
+
+    <style>
+        .new-team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .new-team-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px 24px;
+            text-align: center;
+            width: calc(33.333% - 20px); /* 3 Columns on desktop */
+            min-width: 280px;
+            max-width: 350px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .new-team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(200,164,90,0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+        }
+
+        /* 📐 IMAGE SIZE DIAL: Change width/height here to easily resize your images globally! */
+        .avatar-wrapper {
+            width: 70px;  
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(200, 164, 90, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .new-team-card:hover .avatar-wrapper {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .new-team-card h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .new-team-role {
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .new-team-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.88rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media(max-width: 992px) {
+            .new-team-card {
+                width: calc(50% - 20px); /* 2 Columns on Tablets */
+            }
+        }
+        @media(max-width: 600px) {
+            .new-team-card {
+                width: 100%; /* 1 Column on Mobile Phones */
+                max-width: 100%;
+            }
+        }
+    </style>
+
 </section>
   <section id="vision-mission">
 
