@@ -529,23 +529,28 @@ footer {
   /* ─── MOBILE RESPONSIVE NAV FIX ─── */
   @media (max-width:860px) {
     nav { height: 72px; padding: 0 4%; display: flex; justify-content: space-between; align-items: center; }
-      .nav-logo {
-    gap: 6px;
-    max-width: 65%;
-  }
-
- .logo-img {
-  width: 26px;
-  height: 26px;
+     
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  max-width:60%;
 }
 
-.logo-text {
-  font-size: 0.7rem;
-  line-height: 1.1;
+.logo-img{
+  width:24px;
+  height:24px;
 }
 
-.logo-sub {
-  display: none;
+.logo-text{
+  font-size:0.65rem;
+  line-height:1.05;
+}
+
+.logo-sub{
+  font-size:0.32rem;
+  letter-spacing:0.03em;
+  display:block;
 }
     .desktop-only { display: none; }
     .mobile-actions { display: flex; align-items: center; gap: 10px; }
