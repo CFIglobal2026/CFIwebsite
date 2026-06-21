@@ -535,32 +535,97 @@
   letter-spacing:0.5px;
 }
 
+
 /* ─── FOOTER ─── */
-footer {
 
-  /* ─── FOOTER ─── */
- /* ─── FOOTER ─── */
-  footer { 
-    background: #060f1e; 
-    border-top: 1px solid var(--border); 
-    padding: 3rem 5%; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    gap: 2rem; 
-  }
-  .footer-brand { display: flex; align-items: center; gap: 12px; }
-  .footer-center { font-size: 0.85rem; color: var(--text-muted); text-align: center; line-height: 1.6; }
-  .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; transition: 0.3s ease; }
-  .footer-links a:hover { color: var(--gold); }
+footer{
+  background:#060f1e;
+  border-top:1px solid var(--border);
+  padding:25px 5%;
+}
 
-  @media(max-width:860px) {
-    footer { flex-direction: column; text-align: center; }
-    .footer-links { justify-content: center; flex-wrap: wrap; }
+.footer-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  width:100%;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-center{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.footer-copy{
+  font-size:0.8rem;
+  color:var(--text-muted);
+  margin:0;
+}
+
+.footer-links{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.footer-links a{
+  font-size:0.85rem;
+  color:var(--text-muted);
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.footer-links a:hover{
+  color:var(--gold);
+}
+
+.footer-info{
+  text-align:right;
+  color:var(--text-muted);
+  font-size:0.85rem;
+  line-height:1.5;
+}
+
+.footer-info p{
+  margin:0;
+}
+
+/* Mobile Footer */
+
+@media(max-width:860px){
+
+  footer{
+    padding:25px 20px;
   }
+
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+  }
+
+  .footer-center{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .footer-links{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .footer-info{
+    text-align:center;
+  }
+}
 
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
@@ -1226,22 +1291,23 @@ footer {
 </section>
 
 <footer>
-  <div class="footer-brand">
-    <img src="logo.jpeg" class="logo-img" alt="CFI Logo">
-    <div>
-      <div class="logo-text" style="font-size:0.95rem;">Client First Innovate Pvt Ltd</div>
-      <div class="logo-sub">© 2026 CFI Global. All Rights Reserved.</div>
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      ...
     </div>
-  </div>
-  <div class="footer-center">
-    Registered in India<br>
-    CIN:SP0069650967
-  </div>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#partners">Partners</a>
-    <a href="#specialties">Specialties</a>
-    <a href="contact.html">Contact</a>
+
+    <div class="footer-center">
+      <div class="footer-links">
+        ...
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <p>Registered in India</p>
+      <p>CIN: SP0069650967</p>
+    </div>
+
   </div>
 </footer>
 
