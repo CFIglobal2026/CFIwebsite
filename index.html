@@ -182,9 +182,10 @@
   }
 
 .nav-logo{
-  gap:6px;
-  max-width:65%;
-  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  max-width:45%;
 }
   .nav-logo { display: flex; align-items: center; gap: 12px; }
   
@@ -549,18 +550,29 @@ footer {
 }
 
 .logo-text{
-  font-size:2rem;
+  font-size:0.55rem;
   line-height:1.05;
 }
 
 .logo-sub{
-  font-size:0.32rem;
+  font-size:0.28rem;
   letter-spacing:0.03em;
   display:block;
 }
     .desktop-only { display: none; }
-    .mobile-actions { display: flex; align-items: center; gap: 10px; }
-    .mobile-link { color: var(--gold); text-decoration: none; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+   .mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+ .mobile-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: .55rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
     .menu-toggle { display: block; background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; }
     
     .nav-links {
