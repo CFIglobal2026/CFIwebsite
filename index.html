@@ -1198,26 +1198,28 @@ footer{
                 font-size: 1.8rem;
                 cursor: pointer;
             }
-
-            .mobile-actions {
+.mobile-actions {
                 display: flex;
                 align-items: center;
                 gap: 1rem;
             }
-          #hero {
-        height: auto;
-        min-height: 100vh;
-        flex-direction: column;
-        padding-top: 140px; /* Gives space so navbar doesn't cover your text */
-    }
 
-    .hero-stats {
-        position: static;
-        margin-top: 3rem;
-        justify-content: flex-start;
-    }
+            #hero {
+                height: auto;
+                min-height: 100vh;
+                flex-direction: column;
+                padding-top: 140px; 
+            }
 
+            .hero-stats {
+                position: static !important;
+                display: flex !important;
+                margin-top: 3rem;
+                justify-content: flex-start;
+            }
         }
+
+ 
 
         /* Keep Horizontal Menu and Hide Hamburger on Desktop */
         @media (min-width: 1025px) {
