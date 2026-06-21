@@ -290,7 +290,19 @@
   h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
   h1 em { font-style: normal; color: var(--gold); }
   .hero-desc { font-size: 1.05rem; color: #b0bfd4; line-height: 1.75; max-width: 520px; margin-bottom: 2.5rem; }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+ .hero-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.btn-primary,
+.btn-outline {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
 
   .btn-primary {
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
