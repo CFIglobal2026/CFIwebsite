@@ -571,10 +571,10 @@ footer {
   display:block;
 }
     .desktop-only { display: none; }
-   .mobile-actions {
-  display: flex;
+  .mobile-actions {
+  display: flex !important;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   flex-shrink: 0;
 }
  .mobile-link {
@@ -584,7 +584,14 @@ footer {
   font-weight: 600;
   white-space: nowrap;
 }
-    .menu-toggle { display: block; background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; }
+   .menu-toggle {
+  display: block !important;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
    .nav-links {
   display: none;
   position: fixed;
@@ -614,11 +621,7 @@ footer {
     #hero { padding-top: 120px; }
     .specialty-grid, .contact-grid, .form-row { grid-template-columns: 1fr; }
   }
-  @media (max-width:860px){
-  .nav-links{
-    display:none !important;
-  }
-}
+
 /* ───────────────── TEAM SECTION ───────────────── */
 
 #team{
