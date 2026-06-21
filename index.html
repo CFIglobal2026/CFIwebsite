@@ -643,6 +643,7 @@ footer{
 
   /* --- Brand Typography Alignment Rules --- */
   /* --- New Logo Layout & Colors --- */
+/* --- Clean Logo Layout & Golden Styling --- */
   .logo-text-wrapper {
       display: flex;
       flex-direction: column;
@@ -651,28 +652,21 @@ footer{
   }
 
   .logo-main-text {
-      font-size: 1.1rem !important;
+      font-size: 1.15rem !important;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.1;
   }
 
   .gold-text {
-      color: var(--gold) !important;
-  }
-
-  .pvt-text {
-      font-size: 0.85rem !important;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-top: 1px;
+      color: var(--gold) !important; /* Forces the entire bottom line golden */
   }
 
   .sub-text {
-      font-size: 0.75rem !important;
+      font-size: 0.78rem !important;
       font-weight: 600;
-      letter-spacing: 0.05em;
-      margin-top: 2px;
+      letter-spacing: 0.03em;
+      margin-top: 3px;
   }
 
   .logo-sub{
@@ -925,20 +919,18 @@ footer{
     <img src="logo.jpeg" alt="CFI Logo" class="logo-img">
     <div class="logo-text-wrapper">
         <span class="logo-main-text">Client First Innovate</span>
-        <span class="gold-text pvt-text">Pvt Ltd</span>
-        <span class="gold-text sub-text">CFI Global</span>
+        <span class="gold-text sub-text">Pvt Ltd | CFI Global</span>
     </div>
 </div>
 <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="product.html">Our Products</a></li>
     <li><a href="#partners">Partners</a></li>
     <li><a href="#specialties">Specialties</a></li>
     <li><a href="#why-us">Why Us</a></li>
-
     <li>
         <a href="https://cfiglobal.testportal.com" target="_blank" class="nav-cta">Test</a>
     </li>
+</ul>
     <li class="desktop-only">
         <a href="https://cfiglobal.peopleapps.in/" target="_blank" class="nav-cta">Log In</a>
     </li>
@@ -1377,21 +1369,17 @@ window.addEventListener('DOMContentLoaded', () => {
 const menuBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-if(menuBtn){
-    menuBtn.addEventListener("click", function(){
+if (menuBtn) {
+    menuBtn.addEventListener("click", function () {
         navLinks.classList.toggle("active");
     });
 }
 
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+    });
+});
 
 reveals.forEach(el => observer.observe(el));
 
