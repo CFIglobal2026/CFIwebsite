@@ -614,8 +614,15 @@ footer{
 
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-  .reveal { opacity: 0; transform: translateY(24px); transition: 0.65s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: 0.65s ease;
+}
+.reveal.visible { 
+  opacity: 1; 
+  transform: none; 
+}
 
   /* ─── MOBILE RESPONSIVE NAV FIX ─── */
  /* ─── MOBILE RESPONSIVE NAV FIX ─── */
@@ -924,6 +931,7 @@ footer{
 </div>
 <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="product.html">Our Products</a></li>
     <li><a href="#partners">Partners</a></li>
     <li><a href="#specialties">Specialties</a></li>
     <li><a href="#why-us">Why Us</a></li>
