@@ -633,18 +633,38 @@ footer{
     display:flex;
     align-items:center;
     gap:10px;
-    max-width:65%; /* Increased to give your company name room to grow */
+    max-width:75% !important; /* Increased width to accommodate full name */
   }
 
   .logo-img{
-    width:45px !important; /* Made the logo noticeably bigger */
+    width:45px !important;
     height:45px !important;
   }
 
-  .logo-text{
-    font-size:1.25rem !important; /* Much bigger, readable company name text */
-    line-height:1.2;
+  /* --- Brand Typography Alignment Rules --- */
+  .logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .logo-main-text {
+    font-size: 1.05rem !important;
     font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+
+  .gold-text {
+    color: var(--gold) !important; /* Makes Pvt Ltd & CFI Global golden */
+  }
+
+  .sub-text {
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
   }
 
   .logo-sub{
@@ -725,7 +745,6 @@ footer{
     padding:140px 5% 60px;
   }
 
-  /* This stays safe and unhidden now! */
   .hero-stats{
     position:static !important;
     display:flex !important;
@@ -734,6 +753,7 @@ footer{
     margin-top:40px;
     flex-wrap:wrap;
   }
+
   .nav-links .desktop-only {
     display: block !important;
     width: 100%;
@@ -893,14 +913,13 @@ footer{
 </div>
 
 <nav>
-  <div class="nav-logo">
-   <img src="logo.jpeg" alt="CFI Logo" class="logo-img">
-    <div>
-      <div class="logo-text">Client First Innovate</div>
-      <div class="logo-sub">Pvt. Ltd. &nbsp;|&nbsp; CFI Global</div>
+<div class="nav-logo">
+    <img src="logo.jpeg" alt="CFI Logo" class="logo-img">
+    <div class="logo-text-wrapper">
+        <span class="logo-main-text">Client First Innovate <span class="gold-text">Pvt Ltd</span></span>
+        <span class="gold-text sub-text">CFI Global</span>
     </div>
-  </div>
-
+</div>
 <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="product.html">Our Products</a></li>
