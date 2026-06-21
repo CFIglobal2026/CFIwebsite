@@ -192,7 +192,18 @@
   .logo-img { width: 42px; height: 42px; object-fit: contain; }
   .logo-text { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.2; }
   .logo-sub { font-size: .62rem; color: var(--gold); letter-spacing: .15em; text-transform: uppercase; }
-  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+@media (max-width:860px){
+  ul.nav-links{
+    display:none !important;
+  }
+}
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: .9rem; transition: .3s ease; }
   .nav-links a:hover { color: var(--gold); }
   .nav-cta {
