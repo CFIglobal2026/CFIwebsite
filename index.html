@@ -165,39 +165,40 @@
   }
 
   /* ─── NAVBAR ─── */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 72px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    background: rgba(10,22,40,.95);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-    z-index: 1000;
-  }
-
-.nav-logo{
-  display:flex;
-  align-items:center;
-  gap:4px;
-  max-width:45%;
+ nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(6, 15, 30, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between; /* Pushes logo to left, menu to center, buttons to right */
+  align-items: center;
+  z-index: 1000;
+  box-sizing: border-box; /* Prevents padding from making the bar wider than the screen */
 }
-  
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0; /* Prevents the logo and text from shrinking or wrapping */
+}
   .logo-img { width: 42px; height: 42px; object-fit: contain; }
   .logo-text { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.2; }
   .logo-sub { font-size: .62rem; color: var(--gold); letter-spacing: .15em; text-transform: uppercase; }
-  .nav-links {
+.nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
 
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: .9rem; transition: .3s ease; }
   .nav-links a:hover { color: var(--gold); }
