@@ -214,8 +214,13 @@
     font-weight: 700;
   }
 
-  .mobile-actions { display: none; }
-  .menu-toggle { display: none; }
+ .mobile-actions {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
   .desktop-only { display: block; }
 
   .dropdown { position: relative; }
@@ -570,12 +575,12 @@ footer {
   letter-spacing:0.03em;
   display:block;
 }
-    .desktop-only { display: none; }
   .mobile-actions {
   display: flex !important;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   flex-shrink: 0;
+  background: red !important;
 }
  .mobile-link {
   color: var(--gold);
@@ -621,6 +626,20 @@ footer {
     #hero { padding-top: 120px; }
     .specialty-grid, .contact-grid, .form-row { grid-template-columns: 1fr; }
   }
+  .mobile-actions{
+  display:flex !important;
+  visibility:visible !important;
+}
+
+.menu-toggle{
+  display:block !important;
+  visibility:visible !important;
+}
+
+.mobile-link{
+  display:inline-block !important;
+  visibility:visible !important;
+}
 
 /* ───────────────── TEAM SECTION ───────────────── */
 
