@@ -642,29 +642,37 @@ footer{
   }
 
   /* --- Brand Typography Alignment Rules --- */
+  /* --- New Logo Layout & Colors --- */
   .logo-text-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
   }
 
   .logo-main-text {
-    font-size: 1.05rem !important;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.2;
+      font-size: 1.1rem !important;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.1;
   }
 
   .gold-text {
-    color: var(--gold) !important; /* Makes Pvt Ltd & CFI Global golden */
+      color: var(--gold) !important;
+  }
+
+  .pvt-text {
+      font-size: 0.85rem !important;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-top: 1px;
   }
 
   .sub-text {
-    font-size: 0.75rem !important;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    margin-top: 2px;
+      font-size: 0.75rem !important;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
   }
 
   .logo-sub{
@@ -916,7 +924,8 @@ footer{
 <div class="nav-logo">
     <img src="logo.jpeg" alt="CFI Logo" class="logo-img">
     <div class="logo-text-wrapper">
-        <span class="logo-main-text">Client First Innovate <span class="gold-text">Pvt Ltd</span></span>
+        <span class="logo-main-text">Client First Innovate</span>
+        <span class="gold-text pvt-text">Pvt Ltd</span>
         <span class="gold-text sub-text">CFI Global</span>
     </div>
 </div>
