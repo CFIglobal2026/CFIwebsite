@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CFI Global | Employee Assessment Report</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f6f9;
+padding:40px;
+}
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:10px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+}
+
+.header{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.logo{
+
+width:120px;
+
+margin-bottom:10px;
+
+}
+
+h1{
+
+color:#003366;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+}
+
+table td{
+
+padding:14px;
+
+border:1px solid #ddd;
+
+}
+
+.section-title{
+
+background:#003366;
+
+color:white;
+
+padding:12px;
+
+margin-top:30px;
+
+font-size:18px;
+
+}
+
+.logout{
+
+margin-top:30px;
+
+background:#003366;
+
+color:white;
+
+padding:12px 20px;
+
+border:none;
+
+border-radius:6px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+.logout:hover{
+
+background:#0055aa;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<img src="logo.jpeg" class="logo">
+
+<h1>Employee Assessment Report</h1>
+
+<p>Client First Innovate Pvt. Ltd.</p>
+
+</div>
+
+<div class="section-title">
+
+Employee Information
+
+</div>
+
+<table>
+
+<tr>
+
+<td><strong>Employee Name</strong></td>
+
+<td id="name"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Employee ID</strong></td>
+
+<td id="id"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Department</strong></td>
+
+<td id="department"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Contact Number</strong></td>
+
+<td id="contact"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Email ID</strong></td>
+
+<td id="email"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Reporting Manager</strong></td>
+
+<td id="manager"></td>
+
+</tr>
+
+</table>
+
+<div class="section-title">
+
+Assessment Result
+
+</div>
+
+<table>
+
+<tr>
+
+<td><strong>Phase 1 Marks</strong></td>
+
+<td id="phase1"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Phase 2 Marks</strong></td>
+
+<td id="phase2"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Phase 3 Marks</strong></td>
+
+<td id="phase3"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Overall Percentage</strong></td>
+
+<td id="percentage"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Grade</strong></td>
+
+<td id="grade"></td>
+
+</tr>
+
+<tr>
+
+<td><strong>Status</strong></td>
+
+<td id="status"></td>
+
+</tr>
+
+</table>
+
+<center>
+
+<button class="logout" onclick="logout()">
+
+Logout
+
+</button>
+
+</center>
+
+</div>
+
+<script>
+
+let employee = JSON.parse(localStorage.getItem("employee"));
+
+if(employee){
+
+document.getElementById("name").innerHTML = employee.name;
+
+document.getElementById("id").innerHTML = employee.id;
+
+document.getElementById("department").innerHTML = employee.department;
+
+document.getElementById("contact").innerHTML = employee.contact;
+
+document.getElementById("email").innerHTML = employee.email;
+
+document.getElementById("manager").innerHTML = employee.manager;
+
+document.getElementById("phase1").innerHTML = employee.phase1 + " / 100";
+
+document.getElementById("phase2").innerHTML = employee.phase2 + " / 100";
+
+document.getElementById("phase3").innerHTML = employee.phase3 + " / 100";
+
+document.getElementById("percentage").innerHTML = employee.percentage;
+
+document.getElementById("grade").innerHTML = employee.grade;
+
+document.getElementById("status").innerHTML = employee.status;
+
+}
+
+else{
+
+window.location.href="employee-result.html";
+
+}
+
+function logout(){
+
+localStorage.removeItem("employee");
+
+window.location.href="employee-result.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
