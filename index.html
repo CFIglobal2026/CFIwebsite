@@ -934,21 +934,71 @@ footer{
 
 @media (max-width:600px){
 
-  .hero-btns{
-    flex-direction:column;
-}
+  /* Prevent horizontal scrolling */
+  html,
+  body{
+    overflow-x:hidden;
+  }
 
-.btn-primary,
-.btn-outline{
+  /* Hero Section */
+  #hero{
+    padding:110px 20px 50px;
+    text-align:center;
+  }
+
+  .hero-content{
+    max-width:100%;
+  }
+
+  .hero-content h1{
+    font-size:2rem;
+    line-height:1.2;
+  }
+
+  .hero-desc{
+    font-size:15px;
+    max-width:100%;
+    margin-bottom:25px;
+  }
+
+  .hero-btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
     width:100%;
-}
+  }
+
+  .btn-primary,
+  .btn-outline{
+    width:100%;
+    box-sizing:border-box;
+  }
+
+  .hero-stats{
+    position:static;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:30px;
+  }
+
+  .stat-num{
+    font-size:1.5rem;
+  }
+
+  .stat-label{
+    font-size:11px;
+  }
+
+  /* Certification Popup */
   .cert-overlay{
-    padding:20px;
+    padding:15px;
     align-items:flex-start;
     overflow-y:auto;
   }
 
   .cert-modal{
+    width:100%;
     padding:20px;
     max-height:95vh;
   }
@@ -963,27 +1013,17 @@ footer{
 
   .cert-poster-img{
     width:100%;
+    max-width:100%;
   }
 
   .cert-qr-img{
-    width:150px;
-    height:150px;
+    width:140px;
+    height:140px;
   }
 
   .cert-google-btn{
     width:100%;
     text-align:center;
-  }
-
-  /* Stack hero buttons only on very small phones */
-
-  .hero-btns{
-    flex-direction:column;
-  }
-
-  .btn-primary,
-  .btn-outline{
-    width:100%;
   }
 
 }
