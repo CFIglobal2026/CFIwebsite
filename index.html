@@ -18,54 +18,140 @@
       --card-bg: rgba(17,34,64,0.85);
     }
 
-    /* ─── CERTIFICATION OVERLAY ─── */
-    .cert-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(6, 14, 23, 0.92);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      z-index: 99999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .cert-modal{
-    background: linear-gradient(145deg,#0d1b2a,#050b12);
+   /* ===== CERTIFICATION PROGRAM POPUP ===== */
+
+.cert-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(6,14,23,.92);
+    backdrop-filter:blur(8px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:99999;
+}
+
+.cert-modal{
+    background:linear-gradient(145deg,#0d1b2a,#050b12);
     width:100%;
-    max-width:700px;
+    max-width:720px;
     border-radius:20px;
-    padding:30px;
+    padding:35px;
+    position:relative;
     text-align:center;
     border:1px solid rgba(200,164,90,.3);
-    position:relative;
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
 }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+.cert-close-btn{
+    position:absolute;
+    top:15px;
+    right:18px;
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:34px;
+    cursor:pointer;
+    transition:.3s;
+}
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      overflow-x: hidden;
-    }
-    .cert-title{
-    color:#ffffff;
+.cert-close-btn:hover{
+    color:var(--gold);
+}
+
+.cert-title{
+    color:#fff;
     font-size:2rem;
-    font-weight:700;
-    margin-bottom:12px;
+    margin-bottom:10px;
     font-family:'Poppins',sans-serif;
 }
 
 .cert-title span{
     color:var(--gold);
+}
+
+.cert-subtitle{
+    color:var(--text-muted);
+    margin-bottom:25px;
+    line-height:1.7;
+}
+
+.cert-poster-box{
+    margin-bottom:25px;
+}
+
+.cert-poster-img{
+    width:100%;
+    border-radius:14px;
+}
+
+.cert-action-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.cert-qr-wrapper{
+    text-align:center;
+}
+
+.cert-qr-img{
+    width:160px;
+    border-radius:12px;
+}
+
+.cert-qr-label{
+    display:block;
+    margin-top:10px;
+    color:var(--gold);
+    font-weight:600;
+}
+
+.cert-link-wrapper{
+    max-width:280px;
+}
+
+.cert-link-desc{
+    color:var(--text-muted);
+    margin-bottom:15px;
+}
+
+.cert-google-btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:#081320;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.cert-google-btn:hover{
+    transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+
+.cert-modal{
+    padding:25px;
+}
+
+.cert-title{
+    font-size:1.5rem;
+}
+
+.cert-action-box{
+    flex-direction:column;
+}
+
+.cert-qr-img{
+    width:130px;
+}
+
 }
 
     /* ─── ENHANCED & MOBILE-OPTIMIZED OVERLAY ─── */
@@ -812,126 +898,25 @@ footer{
     border-bottom: 1px solid rgba(255,255,255,.08);
   }
 }
-/* ───────────────── TEAM SECTION ───────────────── */
-
-#team{
-  background:var(--navy);
-  padding:120px 5%;
+    #team{
+  background: var(--navy);
+  padding: 120px 5%;
 }
 
 .team-header{
-  text-align:center;
-  max-width:900px;
-  margin:0 auto 5rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 5rem;
 }
 
 .team-description{
-  max-width:750px;
-  margin:1rem auto 0;
-  color:var(--text-muted);
-  line-height:1.9;
-  font-size:1rem;
+  max-width: 750px;
+  margin: 1rem auto 0;
+  color: var(--text-muted);
+  line-height: 1.9;
+  font-size: 1rem;
 }
 
-
-
-.team-card{
-  background:var(--card-bg);
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:2rem;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  transition:.45s ease;
-}
-
-.team-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-120%;
-  width:60%;
-  height:100%;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.08),
-    transparent
-  );
-  transition:.9s;
-}
-
-.team-card:hover::before{
-  left:130%;
-}
-
-.team-card:hover{
-  transform:translateY(-10px);
-  border-color:rgba(200,164,90,.45);
-  box-shadow:0 20px 40px rgba(0,0,0,.35);
-}
-
-/* Smaller profile images */
-.team-card img{
-  width:50px;
-  height:50px;
-  object-fit:cover;
-  border-radius:50%;
-  display:block;
-  margin:0 auto 1rem;
-  border:3px solid rgba(200,164,90,.35);
-  transition:.4s ease;
-}
-
-.team-card:hover img{
-  transform:scale(1.05);
-  border-color:var(--gold);
-}
-
-.team-card h4{
-  color:#fff;
-  font-size:1.15rem;
-  margin-bottom:.5rem;
-}
-
-.team-role{
-  color:var(--gold);
-  font-size:.85rem;
-  font-weight:600;
-  text-transform:uppercase;
-  margin-bottom:1rem;
-}
-
-.team-card p{
-  color:var(--text-muted);
-  line-height:1.7;
-  font-size:.9rem;
-}
-
-/* Tablet */
-@media(max-width:992px){
-  .team-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-/* Mobile */
-@media(max-width:768px){
-  .team-grid{
-    grid-template-columns:1fr;
-  }
-
-  .team-card{
-    max-width:400px;
-    margin:auto;
-  }
-
-  .team-card img{
-    width:50px;
-    height:50px;
-  }
-}
        .new-team-grid {
             display: flex;
             flex-wrap: wrap;
@@ -963,16 +948,15 @@ footer{
         }
 
         /* 📐 IMAGE SIZE DIAL: Change width/height here to easily resize your images globally! */
-        .avatar-wrapper {
-            width: 90px;  
-            height: 90px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid rgba(200, 164, 90, 0.3);
-            transition: all 0.4s ease;
-        }
-
+      .avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(200, 164, 90, 0.3);
+    transition: all 0.4s ease;
+}
         .new-team-card:hover .avatar-wrapper {
             border-color: var(--gold);
             transform: scale(1.05);
@@ -1275,18 +1259,11 @@ footer{
             <p>A results-driven professional with 4+ years of experience in business development, client acquisition, and strategic partnerships.</p>
         </div>
 
-    </div>
-
- 
-     
-  
-  
+</section>
 
 <section id="vision-mission">
-  
-  
 
-  <div class="vision-header reveal">
+      <div class="vision-header reveal">
     <div class="section-tag">Our Foundation</div>
     <h2>Vision, Mission & <span>Core Values</span></h2>
     <p class="vision-intro">
@@ -1424,7 +1401,7 @@ function handleSubmit(btn) {
 
       <div class="cert-link-wrapper">
         <p class="cert-link-desc">Or register directly via Google Form:</p>
-        <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="cert-google-btn">
+        <a href="https://forms.gle/PEbeGKTe5tmQCJpp8" target="_blank" rel="noopener noreferrer" class="cert-google-btn">
           Open Google Registration Form
         </a>
       </div>
