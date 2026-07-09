@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client First Innovate Pvt Ltd | CFI Global</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400;600;700;900&family=DM+Sans:wght=300;400;500;600&family=Poppins:wght=500;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -165,7 +165,12 @@ transform:translateY(-3px);
 }
 
 .cert-content{
-    grid-template-columns:1fr;
+    flex-direction:column;
+}
+
+.cert-left,
+.cert-right{
+    width:100%;
 }
 
 .cert-right{
@@ -174,10 +179,6 @@ transform:translateY(-3px);
 
 .cert-title{
     font-size:28px;
-}
-
-.cert-subtitle{
-    font-size:16px;
 }
 
 .cert-poster-img{
@@ -189,7 +190,6 @@ transform:translateY(-3px);
 }
 
 }
-
     /* ─── ENHANCED & MOBILE-OPTIMIZED OVERLAY ─── */
     .welcome-overlay {
       position: fixed;
@@ -453,13 +453,10 @@ transform:translateY(-3px);
   h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
   h1 em { font-style: normal; color: var(--gold); }
   .hero-desc { font-size: 1.05rem; color: #b0bfd4; line-height: 1.75; max-width: 520px; margin-bottom: 2.5rem; }
- .hero-btns {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
+ .hero-btns{
+    display:flex;
+    gap:15px;
 }
-
 .btn-primary,
 .btn-outline {
   width: 100%;
@@ -901,16 +898,14 @@ footer{
     border-bottom:1px solid rgba(255,255,255,.08);
   }
 
-  .hero-content{
+ .hero-content{
     max-width:100%;
-  }
+}
 
-  .hero-btns{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-bottom:30px;
-  }
+.hero-btns {
+  display: flex;
+  gap: 15px;
+}
 
   #hero{
     min-height:auto;
@@ -1025,57 +1020,7 @@ footer{
             font-size: 0.88rem;
         }
 
- /* Navbar Mobile & Tablet Rules */
-        @media (max-width: 1024px) {
-            .nav-links {
-                display: none; 
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(6, 15, 30, 0.98);
-                border-bottom: 1px solid var(--border);
-                padding: 2rem 5%;
-                gap: 1.5rem;
-                z-index: 999;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--white);
-                font-size: 1.8rem;
-                cursor: pointer;
-            }
-.mobile-actions {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            #hero {
-                height: auto;
-                min-height: 100vh;
-                flex-direction: column;
-                padding-top: 140px; 
-            }
-
-            .hero-stats {
-                position: static !important;
-                display: flex !important;
-                margin-top: 3rem;
-                justify-content: flex-start;
-            }
-        }
-
  
-
         /* Keep Horizontal Menu and Hide Hamburger on Desktop */
         @media (min-width: 1025px) {
             .menu-toggle {
@@ -1294,6 +1239,7 @@ footer{
             <div class="team-role">Business Development Head</div>
             <p>A results-driven professional with 4+ years of experience in business development, client acquisition, and strategic partnerships.</p>
         </div>
+      </div>
 
 </section>
 
