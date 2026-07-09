@@ -18,156 +18,150 @@
       --card-bg: rgba(17,34,64,0.85);
     }
 
-   /* ===== CERTIFICATION PROGRAM POPUP ===== */
+ /* ================= CERTIFICATION POPUP ================= */
 
 .cert-overlay{
     position:fixed;
     inset:0;
-    background:rgba(6,14,23,.92);
-    backdrop-filter:blur(8px);
+    background:rgba(0,0,0,.82);
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
     z-index:99999;
+    padding:30px;
 }
 
 .cert-modal{
-    background:linear-gradient(145deg,#0d1b2a,#050b12);
-    width:100%;
-    max-width:720px;
-    border-radius:20px;
+    background:#081421;
+    width:95%;
+    max-width:1100px;
+    border-radius:18px;
     padding:35px;
     position:relative;
-    text-align:center;
-    border:1px solid rgba(200,164,90,.3);
-    box-shadow:0 25px 60px rgba(0,0,0,.5);
+    border:1px solid rgba(255,215,0,.25);
+    animation:popup .4s ease;
+}
+
+@keyframes popup{
+from{
+opacity:0;
+transform:scale(.9);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
 }
 
 .cert-close-btn{
-    position:absolute;
-    top:15px;
-    right:18px;
-    background:none;
-    border:none;
-    color:#fff;
-    font-size:34px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.cert-close-btn:hover{
-    color:var(--gold);
+position:absolute;
+top:15px;
+right:20px;
+background:none;
+border:none;
+font-size:34px;
+color:white;
+cursor:pointer;
 }
 
 .cert-title{
-    color:#fff;
-    font-size:2rem;
-    margin-bottom:10px;
-    font-family:'Poppins',sans-serif;
+text-align:center;
+font-size:34px;
+color:white;
+margin-bottom:10px;
 }
 
 .cert-title span{
-    color:var(--gold);
+color:#d4af37;
 }
 
 .cert-subtitle{
-    color:var(--text-muted);
-    margin-bottom:25px;
-    line-height:1.7;
+text-align:center;
+color:#d8d8d8;
+margin-bottom:30px;
+font-size:18px;
 }
 
-.cert-poster-box{
-    margin-bottom:25px;
+.cert-content{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+}
+
+.cert-left{
+flex:2;
+text-align:center;
+}
+
+.cert-right{
+flex:1;
+text-align:center;
 }
 
 .cert-poster-img{
-    display:block;
-    width:100%;
-    max-width:420px;
-    max-height:420px;
-    object-fit:contain;
-    margin:auto;
-    border-radius:12px;
-    border:1px solid rgba(200,164,90,.3);
-}
-
-.cert-action-box{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:35px;
-    flex-wrap:wrap;
-}
-
-.cert-qr-wrapper{
-    text-align:center;
+width:100%;
+max-width:600px;
+border-radius:12px;
+box-shadow:0 0 25px rgba(0,0,0,.4);
 }
 
 .cert-qr-img{
-    width:160px;
-    border-radius:12px;
+width:220px;
+background:white;
+padding:10px;
+border-radius:12px;
+margin-bottom:20px;
 }
 
-.cert-qr-label{
-    display:block;
-    margin-top:10px;
-    color:var(--gold);
-    font-weight:600;
+.cert-right h3{
+color:#fff;
+margin-bottom:10px;
 }
 
-.cert-link-wrapper{
-    max-width:280px;
-}
-
-.cert-link-desc{
-    color:var(--text-muted);
-    margin-bottom:15px;
+.cert-right p{
+color:#ccc;
+margin-bottom:25px;
+line-height:1.6;
 }
 
 .cert-google-btn{
-    display:inline-block;
-    padding:14px 28px;
-    border-radius:10px;
-    background:linear-gradient(135deg,var(--gold),var(--gold-light));
-    color:#081320;
-    text-decoration:none;
-    font-weight:700;
-    transition:.3s;
+display:inline-block;
+padding:15px 35px;
+background:#d4af37;
+color:#081421;
+font-weight:bold;
+border-radius:50px;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
 }
 
 .cert-google-btn:hover{
-    transform:translateY(-3px);
+background:#fff;
+transform:translateY(-3px);
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.cert-modal{
-    background:linear-gradient(145deg,#0d1b2a,#050b12);
-    width:95%;
-    max-width:900px;
-    max-height:90vh;
-    overflow-y:auto;
-    padding:30px;
-    border-radius:20px;
-    position:relative;
-    border:1px solid rgba(200,164,90,.3);
+.cert-content{
+flex-direction:column;
 }
 
 .cert-title{
-    font-size:1.5rem;
+font-size:28px;
 }
 
-.cert-action-box{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:35px;
-    flex-wrap:wrap;
-    margin-top:25px;
+.cert-subtitle{
+font-size:16px;
 }
+
+.cert-poster-img{
+max-width:100%;
+}
+
 .cert-qr-img{
-    width:130px;
+width:180px;
 }
 
 }
@@ -1415,47 +1409,33 @@ function handleSubmit(btn) {
         <p class="cert-subtitle">
             Build your career with industry experts. Scan the QR Code or click the button below to register.
         </p>
+<div class="cert-content">
 
-        <div class="cert-content">
+    <div class="cert-left">
 
-            <div class="cert-left">
-                <img src="career.jpeg"
-                     alt="Certification Program"
-                     class="cert-poster-img">
-            </div>
+        <img src="career.jpeg"
+             class="cert-poster-img">
 
-            <div class="cert-right">
+    </div>
 
-                <img src="CFI_Google_Form_QR.png"
-                     alt="QR Code"
-                     class="cert-qr-img">
+    <div class="cert-right">
 
-                <h3>Scan to Register</h3>
+        <img src="CFI_Google_Form_QR.png"
+             class="cert-qr-img">
 
-                <p>
-                    Registration closes soon.<br>
-                    Reserve your seat today.
-                </p>
+        <h3>Scan to Register</h3>
 
-                <a href="https://forms.gle/PEbeGKTe5tmQCJpp8"
-                   target="_blank"
-                   class="cert-google-btn">
-                    Apply Now
-                </a>
+        <p>
+            Registration closes soon.<br>
+            Reserve your seat today.
+        </p>
 
-            </div>
-
-        </div>
+        <a href="https://forms.gle/PEbeGKTe5tmQCJpp8"
+           target="_blank"
+           class="cert-google-btn">
+            Apply Now
+        </a>
 
     </div>
 
 </div>
-
-<script>
-function closeCertOverlay() {
-    document.getElementById("certification-overlay").style.display = "none";
-}
-</script>
-
-</body>
-</html>
