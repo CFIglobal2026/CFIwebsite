@@ -776,11 +776,30 @@ footer{
     padding:140px 5% 60px;
   }
 
-  .hero-stats{
+ .hero-stats{
+    position:static !important;
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
     gap:25px;
+    margin-top:40px;
+}
+
+.stat{
+    width:95px;
+    text-align:center;
+    flex:0 0 auto;
+}
+
+.stat-num{
+    font-size:2rem;
+    line-height:1.1;
+}
+
+.stat-label{
+    font-size:0.72rem;
+    line-height:1.4;
 }
   .nav-links .desktop-only {
     display: block !important;
