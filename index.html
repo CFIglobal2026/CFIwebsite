@@ -82,8 +82,14 @@
 }
 
 .cert-poster-img{
+    display:block;
     width:100%;
-    border-radius:14px;
+    max-width:420px;
+    max-height:420px;
+    object-fit:contain;
+    margin:auto;
+    border-radius:12px;
+    border:1px solid rgba(200,164,90,.3);
 }
 
 .cert-action-box{
@@ -137,7 +143,15 @@
 @media(max-width:768px){
 
 .cert-modal{
-    padding:25px;
+    background:linear-gradient(145deg,#0d1b2a,#050b12);
+    width:95%;
+    max-width:900px;
+    max-height:90vh;
+    overflow-y:auto;
+    padding:30px;
+    border-radius:20px;
+    position:relative;
+    border:1px solid rgba(200,164,90,.3);
 }
 
 .cert-title{
@@ -145,9 +159,13 @@
 }
 
 .cert-action-box{
-    flex-direction:column;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    flex-wrap:wrap;
+    margin-top:25px;
 }
-
 .cert-qr-img{
     width:130px;
 }
@@ -1382,26 +1400,7 @@ function handleSubmit(btn) {
     }, 3500);
 }
 </script>
- <!-- ─── CERTIFICATION PROGRAM WELCOME OVERLAY ─── -->
-<div id="certification-overlay" class="cert-overlay">
-  <div class="cert-modal">
-    <button class="cert-close-btn" onclick="closeCertOverlay()">&times;</button>
-    <h2 class="cert-title">Welcome to Our <span>Certification Program</span></h2>
-    <p class="cert-subtitle">Enhance your skills and gain industry-recognized credentials with CFI Global.</p>
-    
-    <div class="cert-poster-box">
-      <img src="CFI_Google_Form_QR.png" alt="Certification Program Poster" class="cert-poster-img">
-    </div>
 
-    <div class="cert-action-box">
-      <div class="cert-qr-wrapper">
-        <img src="CFI_Google_Form_QR.png" alt="Scan QR Code to Register" class="cert-qr-img">
-        <span class="cert-qr-label">Scan to Apply</span>
-      </div>
-
-      <div class="cert-link-wrapper">
-        <p class="cert-link-desc">Or register directly via Google Form:</p>
-   <!-- ─── CERTIFICATION PROGRAM POPUP ─── -->
 <!-- ─── CERTIFICATION PROGRAM POPUP ─── -->
 <div id="certification-overlay" class="cert-overlay">
 
@@ -1424,7 +1423,7 @@ function handleSubmit(btn) {
                  class="cert-poster-img">
         </div>
 
-        <!-- QR + Button -->
+        <!-- QR + Google Form -->
         <div class="cert-action-box">
 
             <div class="cert-qr-wrapper">
@@ -1446,9 +1445,7 @@ function handleSubmit(btn) {
                 <a href="https://forms.gle/PEbeGKTe5tmQCJpp8"
                    target="_blank"
                    class="cert-google-btn">
-
                     Apply Now
-
                 </a>
 
             </div>
@@ -1460,6 +1457,10 @@ function handleSubmit(btn) {
 </div>
 
 <script>
+function closeCertOverlay() {
+    document.getElementById("certification-overlay").style.display = "none";
+}
+</script>
 function closeCertOverlay(){
     document.getElementById("certification-overlay").style.display="none";
 }
