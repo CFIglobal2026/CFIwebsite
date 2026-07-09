@@ -1401,15 +1401,69 @@ function handleSubmit(btn) {
 
       <div class="cert-link-wrapper">
         <p class="cert-link-desc">Or register directly via Google Form:</p>
-        <a href="https://forms.gle/PEbeGKTe5tmQCJpp8" target="_blank" rel="noopener noreferrer" class="cert-google-btn">
-          Open Google Registration Form
-        </a>
-      </div>
+   <!-- ─── CERTIFICATION PROGRAM POPUP ─── -->
+<!-- ─── CERTIFICATION PROGRAM POPUP ─── -->
+<div id="certification-overlay" class="cert-overlay">
+
+    <div class="cert-modal">
+
+        <button class="cert-close-btn" onclick="closeCertOverlay()">&times;</button>
+
+        <h2 class="cert-title">
+            Welcome to Our <span>Certification Program</span>
+        </h2>
+
+        <p class="cert-subtitle">
+            Enhance your skills and build your career with CFI Global.
+        </p>
+
+        <!-- Poster -->
+        <div class="cert-poster-box">
+            <img src="career.jpeg"
+                 alt="Certification Poster"
+                 class="cert-poster-img">
+        </div>
+
+        <!-- QR + Button -->
+        <div class="cert-action-box">
+
+            <div class="cert-qr-wrapper">
+                <img src="CFI_Google_Form_QR.png"
+                     alt="QR Code"
+                     class="cert-qr-img">
+
+                <span class="cert-qr-label">
+                    Scan to Register
+                </span>
+            </div>
+
+            <div class="cert-link-wrapper">
+
+                <p class="cert-link-desc">
+                    Or click below to register online.
+                </p>
+
+                <a href="https://forms.gle/PEbeGKTe5tmQCJpp8"
+                   target="_blank"
+                   class="cert-google-btn">
+
+                    Apply Now
+
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </div>
 
 <script>
+function closeCertOverlay(){
+    document.getElementById("certification-overlay").style.display="none";
+}
+</script>
 function closeCertOverlay() {
   document.getElementById('certification-overlay').style.display = 'none';
 }
