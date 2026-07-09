@@ -1401,7 +1401,7 @@ function handleSubmit(btn) {
 }
 </script>
 
-<!-- ─── CERTIFICATION PROGRAM POPUP ─── -->
+<!-- ================= CERTIFICATION POPUP ================= -->
 <div id="certification-overlay" class="cert-overlay">
 
     <div class="cert-modal">
@@ -1409,37 +1409,32 @@ function handleSubmit(btn) {
         <button class="cert-close-btn" onclick="closeCertOverlay()">&times;</button>
 
         <h2 class="cert-title">
-            Welcome to Our <span>Certification Program</span>
+            CFI Global <span>Certification Program</span>
         </h2>
 
         <p class="cert-subtitle">
-            Enhance your skills and build your career with CFI Global.
+            Build your career with industry experts. Scan the QR Code or click the button below to register.
         </p>
 
-        <!-- Poster -->
-        <div class="cert-poster-box">
-            <img src="career.jpeg"
-                 alt="Certification Poster"
-                 class="cert-poster-img">
-        </div>
+        <div class="cert-content">
 
-        <!-- QR + Google Form -->
-        <div class="cert-action-box">
+            <div class="cert-left">
+                <img src="career.jpeg"
+                     alt="Certification Program"
+                     class="cert-poster-img">
+            </div>
 
-            <div class="cert-qr-wrapper">
+            <div class="cert-right">
+
                 <img src="CFI_Google_Form_QR.png"
                      alt="QR Code"
                      class="cert-qr-img">
 
-                <span class="cert-qr-label">
-                    Scan to Register
-                </span>
-            </div>
+                <h3>Scan to Register</h3>
 
-            <div class="cert-link-wrapper">
-
-                <p class="cert-link-desc">
-                    Or click below to register online.
+                <p>
+                    Registration closes soon.<br>
+                    Reserve your seat today.
                 </p>
 
                 <a href="https://forms.gle/PEbeGKTe5tmQCJpp8"
@@ -1461,13 +1456,6 @@ function closeCertOverlay() {
     document.getElementById("certification-overlay").style.display = "none";
 }
 </script>
-function closeCertOverlay(){
-    document.getElementById("certification-overlay").style.display="none";
-}
-</script>
-function closeCertOverlay() {
-  document.getElementById('certification-overlay').style.display = 'none';
-}
-</script>
+
 </body>
 </html>
