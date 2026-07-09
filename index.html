@@ -16,10 +16,7 @@
     --border: rgba(200,164,90,0.2);
     --card-bg: rgba(17,34,64,0.85);
   }
-  <!-- Put the CSS rules inside your existing <style> block -->
-<style>
-  /* ... existing styles ... */
-
+ /* ─── CERTIFICATION OVERLAY ─── */
   .cert-overlay {
     position: fixed;
     top: 0;
@@ -1386,22 +1383,17 @@ function handleSubmit(btn) {
     }, 3500);
 }
 </script>
-  <!-- ─── CERTIFICATION PROGRAM WELCOME OVERLAY ─── -->
+ <!-- ─── CERTIFICATION PROGRAM WELCOME OVERLAY ─── -->
 <div id="certification-overlay" class="cert-overlay">
   <div class="cert-modal">
-    <!-- Close Button -->
     <button class="cert-close-btn" onclick="closeCertOverlay()">&times;</button>
-    
-    <!-- Title / Header -->
     <h2 class="cert-title">Welcome to Our <span>Certification Program</span></h2>
     <p class="cert-subtitle">Enhance your skills and gain industry-recognized credentials with CFI Global.</p>
     
-    <!-- Poster Section -->
     <div class="cert-poster-box">
       <img src="CFI_Google_Form_QR.png" alt="Certification Program Poster" class="cert-poster-img">
     </div>
 
-    <!-- QR Code & Link Action Area -->
     <div class="cert-action-box">
       <div class="cert-qr-wrapper">
         <img src="CFI_Google_Form_QR.png" alt="Scan QR Code to Register" class="cert-qr-img">
@@ -1411,9 +1403,6 @@ function handleSubmit(btn) {
       <div class="cert-link-wrapper">
         <p class="cert-link-desc">Or register directly via Google Form:</p>
         <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="cert-google-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
-          </svg>
           Open Google Registration Form
         </a>
       </div>
@@ -1426,3 +1415,5 @@ function closeCertOverlay() {
   document.getElementById('certification-overlay').style.display = 'none';
 }
 </script>
+</body>
+</html>
