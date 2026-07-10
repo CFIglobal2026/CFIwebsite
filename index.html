@@ -17,6 +17,11 @@
       --border: rgba(200,164,90,0.2);
       --card-bg: rgba(17,34,64,0.85);
     }
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 
 
@@ -313,7 +318,13 @@ transform:translateY(-3px);
 
   h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
   h1 em { font-style: normal; color: var(--gold); }
-  .hero-desc { font-size: 1.05rem; color: #b0bfd4; line-height: 1.75; max-width: 520px; margin-bottom: 2.5rem; }
+ .hero-desc {
+    font-size: 1.05rem;
+    color: #b0bfd4;
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+}
 .hero-btns{
     display:flex;
     flex-direction:row;
@@ -848,10 +859,10 @@ footer{
     max-width:100%;
   }
 
-  .hero-content h1{
-    font-size:2.6rem;
+ .hero-content h1{
+    font-size:3rem;
     line-height:1.15;
-  }
+}
 
   /* KEEP BUTTONS HORIZONTAL */
 
@@ -872,27 +883,31 @@ footer{
 
   /* HERO STATS */
 
-  .hero-stats{
-    position:static;
-    display:flex;
-    justify-content:space-between;
+ .hero-stats{
+    position:relative;
+    right:auto;
+    bottom:auto;
+
     width:100%;
     margin-top:35px;
-    gap:10px;
-  }
 
-  .stat{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+ .stat{
     flex:1;
-    text-align:center;
-  }
+    min-width:90px;
+}
 
   .stat-num{
     font-size:1.8rem;
   }
 
-  .stat-label{
-    font-size:.7rem;
-  }
+ .stat-label{
+    font-size:13px;
+    white-space:normal;
+}
 
   /* TEAM */
 
@@ -931,111 +946,75 @@ footer{
 }
 
 /* ================= SMALL MOBILE ================= */
-
 @media (max-width:600px){
 
-  /* Prevent horizontal scrolling */
-  html,
-  body{
-    overflow-x:hidden;
-  }
-
-  /* Hero Section */
-  #hero{
-    padding:110px 20px 50px;
-    text-align:center;
-  }
-
-  .hero-content{
-    max-width:100%;
-  }
-
-  .hero-content h1{
-    font-size:2rem;
-    line-height:1.2;
-  }
-
-  .hero-desc{
-    font-size:15px;
-    max-width:100%;
-    margin-bottom:25px;
-  }
-
-  .hero-btns{
+#hero{
     display:flex;
     flex-direction:column;
-    gap:12px;
+    align-items:flex-start;
+}
+
+.hero-content{
     width:100%;
-  }
+    max-width:100%;
+}
 
-  .btn-primary,
-  .btn-outline{
+.hero-desc{
     width:100%;
-    box-sizing:border-box;
-  }
+    max-width:100%;
+    font-size:18px;
+    line-height:1.8;
+}
 
-  .hero-stats{
-    position:static;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-top:30px;
-  }
+/* Certification Popup */
 
-  .stat-num{
-    font-size:1.5rem;
-  }
-
-  .stat-label{
-    font-size:11px;
-  }
-
-  /* Certification Popup */
-  .cert-overlay{
+.cert-overlay{
     padding:15px;
     align-items:flex-start;
     overflow-y:auto;
-  }
+}
 
-  .cert-modal{
+.cert-modal{
     width:100%;
     padding:20px;
     max-height:95vh;
-  }
+}
 
-  .cert-title{
+.cert-title{
     font-size:24px;
-  }
+}
 
-  .cert-subtitle{
+.cert-subtitle{
     font-size:14px;
-  }
+}
 
-  .cert-poster-img{
+.cert-poster-img{
     width:100%;
     max-width:100%;
-  }
+}
 
-  .cert-qr-img{
+.cert-qr-img{
     width:140px;
     height:140px;
-  }
+}
 
-  .cert-google-btn{
+.cert-google-btn{
     width:100%;
     text-align:center;
-  }
-
 }
+
+
 
 /* ================= BODY ================= */
 
 body{
-  background:#081421;
-  color:#fff;
-  overflow-x:hidden;
+    margin:0;
+    padding:0;
+    background:#081421;
+    color:#fff;
+    overflow-x:hidden;
+    font-family:'DM Sans',sans-serif;
 }
-
 .cert-overlay{
   overflow-y:auto;
 }
