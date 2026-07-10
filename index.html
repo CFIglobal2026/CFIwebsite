@@ -316,8 +316,19 @@ transform:translateY(-3px);
     margin-bottom: 2rem; background: rgba(200,164,90,0.06);
   }
 
-  h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
-  h1 em { font-style: normal; color: var(--gold); }
+ h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--gold);   /* <-- ADD THIS */
+}
+
+h1 em {
+    font-style: normal;
+    color: var(--gold);
+}
  .hero-desc {
     font-size: 1.05rem;
     color: #b0bfd4;
@@ -362,8 +373,18 @@ transform:translateY(-3px);
   /* ─── SECTION COMMONS ─── */
   section { padding: 100px 5%; }
   .section-tag { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; }
-  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
-  h2 span { color: var(--gold); }
+ h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--gold);   /* <-- ADD THIS */
+}
+
+h2 span {
+    color: var(--gold);
+}
   .section-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; max-width: 540px; }
 
   /* ───────── SERVICES SECTION ───────── */
@@ -378,7 +399,13 @@ transform:translateY(-3px);
   .service-card:hover { transform: translateY(-8px); border-color: rgba(200,164,90,.45); box-shadow: 0 15px 40px rgba(0,0,0,.25); }
   .service-icon { width: 52px; height: 52px; background: rgba(200,164,90,.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; transition: .3s ease; }
   .service-card:hover .service-icon { transform: scale(1.1); }
-  .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: .75rem; font-weight: 600; }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    margin-bottom: .75rem;
+    font-weight: 600;
+    color: var(--gold);
+}
   .service-card p { color: var(--text-muted); font-size: .875rem; line-height: 1.7; }
 
   @media(max-width:768px) {
@@ -419,7 +446,12 @@ transform:translateY(-3px);
   .specialty-card .bg-num { position: absolute; right: 1.5rem; top: 1rem; font-family: 'Playfair Display', serif; font-size: 6rem; font-weight: 900; color: rgba(200,164,90,.05); }
   .specialty-icon { font-size: 2.8rem; margin-bottom: 1rem; display: inline-block; animation: floatIcon 3s ease-in-out infinite; }
   @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-  .specialty-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+ .specialty-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+}
   .specialty-card p { color: var(--text-muted); font-size: .9rem; margin-bottom: 1.5rem; line-height: 1.75; }
   .specialty-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
   .specialty-list li { font-size: .9rem; color: #b0bfd4; display: flex; align-items: center; gap: 8px; transition: .3s ease; }
