@@ -1394,6 +1394,29 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
+</footer>
+
+<script>
+
+// --- Mobile Burger Menu Logic (Restored & Fixed) ---
+const menuBtn = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+}
+
+// Closes the menu automatically when a link inside it is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks) {
+            navLinks.classList.remove('active');
+        }
+    });
+});
+
 // --- Form Submission Logic ---
 function handleSubmit(btn) {
     btn.textContent = '✅ Request Sent!';
@@ -1406,82 +1429,8 @@ function handleSubmit(btn) {
         btn.disabled = false;
     }, 3500);
 }
+
 </script>
 
-<!-- ================= CERTIFICATION POPUP ================= -->
-
-<div id="certification-overlay" class="cert-overlay">
-
-    <div class="cert-modal">
-
-        <!-- Close Button -->
-        <button class="cert-close-btn" onclick="closeCertOverlay()">
-            &times;
-        </button>
-
-        <!-- Heading -->
-       <h2 class="cert-title">
-    🎓 CFI Global
-    <span>Certification Program</span>
-</h2>
-
-        <p class="cert-subtitle">
-            Build your career with industry experts.
-            Scan the QR Code or click the button below to register.
-        </p>
-
-        <!-- Main Content -->
-        <div class="cert-content">
-
-            <!-- LEFT SIDE -->
-            <div class="cert-left">
-
-                <img
-                    src="career.jpeg"
-                    alt="Certification Poster"
-                    class="cert-poster-img">
-
-            </div>
-
-            <!-- RIGHT SIDE -->
-            <div class="cert-right">
-
-                <img
-                    src="CFI_Google_Form_QR.png"
-                    alt="QR Code"
-                    class="cert-qr-img">
-
-                <h3>Scan to Register</h3>
-
-                <p>
-                    Registration closes soon.<br>
-                    Reserve your seat today.
-                </p>
-
-                <a
-                    href="https://forms.gle/PEbeGKTe5tmQCJpp8"
-                    target="_blank"
-                    class="cert-google-btn">
-
-                    Apply Now
-
-                </a>
-
-            </div>
-            <!-- End cert-right -->
-
-        </div>
-        <!-- End cert-content -->
-
-    </div>
-    <!-- End cert-modal -->
-
-</div>
-
-
-<script>
-
-  </body>
-  
+</body>
 </html>
-  
