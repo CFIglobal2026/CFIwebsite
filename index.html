@@ -806,14 +806,14 @@ footer{
 }
 
 .reveal{
-  opacity:1 !important;
-  transform:none !important;
-  transition:.65s ease;
+opacity:0;
+transform:translateY(60px);
+transition:all .8s ease;
 }
 
 .reveal.visible{
-  opacity:1;
-  transform:none;
+opacity:1;
+transform:translateY(0);
 }
 
 /* ================= MOBILE ================= */
@@ -1081,7 +1081,163 @@ h2 span{
     }
 }
 
-}   /* <-- ADD THIS */
+}   
+    /* Floating Cards */
+
+.floating-elements{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.float-card{
+    position:absolute;
+    padding:12px 22px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(200,164,90,.25);
+    border-radius:50px;
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    animation:floatCard 6s ease-in-out infinite;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.card1{
+    top:18%;
+    right:10%;
+}
+
+.card2{
+    top:40%;
+    right:4%;
+    animation-delay:1.5s;
+}
+
+.card3{
+    bottom:22%;
+    left:55%;
+    animation-delay:3s;
+}
+
+.card4{
+    top:65%;
+    right:18%;
+    animation-delay:4.5s;
+}
+
+@keyframes floatCard{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-18px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+    .blob{
+position:absolute;
+border-radius:50%;
+filter:blur(80px);
+opacity:.35;
+animation:blobMove 18s infinite alternate ease-in-out;
+}
+
+.blob1{
+width:280px;
+height:280px;
+background:#d4af37;
+top:5%;
+left:10%;
+}
+
+.blob2{
+width:350px;
+height:350px;
+background:#1f6fff;
+bottom:10%;
+right:8%;
+animation-delay:5s;
+}
+
+.blob3{
+width:220px;
+height:220px;
+background:#00b8ff;
+top:50%;
+left:45%;
+animation-delay:10s;
+}
+
+@keyframes blobMove{
+
+0%{
+transform:translate(0,0) scale(1);
+}
+
+100%{
+transform:translate(70px,-60px) scale(1.25);
+}
+
+}
+    .btn-primary{
+    animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+box-shadow:0 0 0 0 rgba(212,175,55,.6);
+}
+
+70%{
+box-shadow:0 0 0 18px rgba(212,175,55,0);
+}
+
+100%{
+box-shadow:0 0 0 0 rgba(212,175,55,0);
+}
+
+}
+    .service-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-120%;
+
+left:-50%;
+
+width:45%;
+
+height:300%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent
+);
+
+transform:rotate(25deg);
+
+transition:.8s;
+
+}
+
+.service-card:hover::after{
+
+left:160%;
+
+}
 
 </style>
 </head>
@@ -1125,6 +1281,11 @@ h2 span{
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
   <div class="hero-content">
     <div class="hero-tag">Trusted Financial & Technology Partner</div>
    <h1>Where <em>Clients</em> Come First.<br>Always.</h1>
@@ -1139,6 +1300,25 @@ h2 span{
     <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Insurers</div></div>
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">City Offices</div></div>
   </div>
+  <div class="floating-elements">
+
+    <div class="float-card card1">
+        💼 Trusted by 5000+ Clients
+    </div>
+
+    <div class="float-card card2">
+        🏦 10+ Banking Partners
+    </div>
+
+    <div class="float-card card3">
+        ⚡ Fast Loan Processing
+    </div>
+
+    <div class="float-card card4">
+        🌍 Pan India Presence
+    </div>
+
+</div>
 </section>
  
 
@@ -1446,6 +1626,21 @@ function handleSubmit(btn) {
         btn.disabled = false;
     }, 3500);
 }
+
+// Scroll Reveal Animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+});
 
 </script>
 
