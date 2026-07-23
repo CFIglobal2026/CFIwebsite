@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client First Innovate Pvt Ltd | CFI Global</title>
  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     :root {
       --navy: #0a1628;
@@ -1019,6 +1019,23 @@ transform:translateY(0);
   }
 
 }
+    .pay-now-btn{
+    background: linear-gradient(135deg,#00b4ff,#0066ff);
+    color:#fff !important;
+    padding:10px 22px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.3s;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    box-shadow:0 8px 20px rgba(0,102,255,.35);
+}
+
+.pay-now-btn:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 12px 30px rgba(0,102,255,.5);
+}
 
 /* ================= SMALL MOBILE ================= */
 @media (max-width:600px){
@@ -1057,31 +1074,13 @@ h1 em,
 h2 span{
     color: inherit !important;
 }
-.pay-now-btn{
-    background: linear-gradient(135deg,#00b4ff,#0066ff);
-    color:#fff !important;
-    padding:10px 22px;
-    border-radius:50px;
-    font-weight:700;
-    transition:.3s;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    box-shadow:0 8px 20px rgba(0,102,255,.35);
-}
 
-.pay-now-btn:hover{
-    transform:translateY(-3px) scale(1.05);
-    box-shadow:0 12px 30px rgba(0,102,255,.5);
-}
-
-@media (max-width:768px){
+}   
+    @media (max-width:768px){
     .nav-links .pay-now-btn{
         display:flex;
     }
 }
-
-}   
     /* Floating Cards */
 
 .floating-elements{
@@ -1643,15 +1642,13 @@ left:160%;
     <a href="product.html">Our Products</a>
     <a href="#partners">Partners</a>
     <a href="#specialties">Specialties</a>
-    <a href="#contact">Contact</a>
+    <a href="contact.html">Contact</a>
   </div>
 
-</footer>
+  </footer>
 
 <script>
-
-
-// --- Mobile Burger Menu Logic (Restored & Fixed) ---
+// Mobile menu
 const menuBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
@@ -1661,66 +1658,24 @@ if (menuBtn && navLinks) {
     });
 }
 
-// Closes the menu automatically when a link inside it is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (navLinks) {
-            navLinks.classList.remove('active');
-        }
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
     });
 });
 
-</footer>
-
-<script>
-
-// --- Mobile Burger Menu Logic (Restored & Fixed) ---
-const menuBtn = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-    });
-}
-
-// Closes the menu automatically when a link inside it is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (navLinks) {
-            navLinks.classList.remove('active');
-        }
-    });
-});
-
-// --- Form Submission Logic ---
-function handleSubmit(btn) {
-    btn.textContent = '✅ Request Sent!';
-    btn.style.background = 'linear-gradient(135deg,#2ecc71,#27ae60)';
-    btn.disabled = true;
-
-    setTimeout(() => {
-        btn.textContent = 'Send Request →';
-        btn.style.background = '';
-        btn.disabled = false;
-    }, 3500);
-}
-
-// Scroll Reveal Animation
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+// Reveal animation
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
             entry.target.classList.add("visible");
         }
     });
-}, {
-    threshold: 0.15
 });
 
-document.querySelectorAll(".reveal").forEach((el) => {
+document.querySelectorAll(".reveal").forEach(el=>{
     observer.observe(el);
 });
-
 </script>
 
 </body>
